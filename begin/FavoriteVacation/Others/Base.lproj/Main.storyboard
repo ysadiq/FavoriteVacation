@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0PW-Ve-fdn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1jY-vT-n8J">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
@@ -7,32 +7,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favorite Spots-->
-        <scene sceneID="s0Q-cn-sIx">
-            <objects>
-                <viewController id="fkW-zg-bho" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Za8-96-Kfi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="RYm-Ph-3HN"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Favorite Spots" selectedImage="star.fill" catalog="system" id="lgB-Ju-jlN"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hji-1Y-aul" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="54" y="733"/>
-        </scene>
-        <!--All Spots-->
+        <!--Favorite Vacation-->
         <scene sceneID="8bn-fW-xFQ">
             <objects>
-                <viewController id="1jY-vT-n8J" customClass="DestinationViewController" customModule="FavoriteVacation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Favorite Vacation" id="1jY-vT-n8J" customClass="DestinationViewController" customModule="FavoriteVacation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fIn-qm-fyQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="qC2-4b-oyo" userLabel="Segment + TableView">
-                                <rect key="frame" x="10" y="60" width="355" height="558"/>
+                                <rect key="frame" x="10" y="60" width="355" height="607"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="H5M-cc-Xr8">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="32"/>
@@ -44,7 +28,7 @@
                                         <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </segmentedControl>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xQN-2l-8ay">
-                                        <rect key="frame" x="0.0" y="55" width="355" height="503"/>
+                                        <rect key="frame" x="0.0" y="55" width="355" height="552"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="destinationCellIdentifier" rowHeight="250" id="UD0-Xc-AFb" customClass="DestinationTableViewCell" customModule="FavoriteVacation" customModuleProvider="target">
@@ -158,6 +142,14 @@
                                     </tableView>
                                 </subviews>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xdC-YV-Tyh">
+                                <rect key="frame" x="0.0" y="16" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="Favorite Vacation" id="8rR-2k-Q9W"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -178,29 +170,10 @@
             </objects>
             <point key="canvasLocation" x="54" y="-13"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="2HG-wZ-MUG">
-            <objects>
-                <tabBarController id="0PW-Ve-fdn" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MXG-79-R77">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="1jY-vT-n8J" kind="relationship" relationship="viewControllers" id="tIb-in-6eZ"/>
-                        <segue destination="fkW-zg-bho" kind="relationship" relationship="viewControllers" id="e8c-GI-vAd"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CUE-TK-VO5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-825" y="269"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Bali" width="1024" height="597"/>
         <image name="airplane" catalog="system" width="64" height="56"/>
         <image name="heart" catalog="system" width="64" height="54"/>
-        <image name="star.fill" catalog="system" width="64" height="58"/>
     </resources>
 </document>
