@@ -26,7 +26,7 @@
         <!--All Spots-->
         <scene sceneID="8bn-fW-xFQ">
             <objects>
-                <viewController id="1jY-vT-n8J" customClass="ViewController" customModule="FavoriteVacation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1jY-vT-n8J" customClass="DestinationViewController" customModule="FavoriteVacation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fIn-qm-fyQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +47,7 @@
                                         <rect key="frame" x="0.0" y="55" width="355" height="503"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="250" id="UD0-Xc-AFb">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="9" rowHeight="250" id="UD0-Xc-AFb" customClass="DestinationTableViewCell" customModule="FavoriteVacation" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="355" height="250"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UD0-Xc-AFb" id="KVt-wr-keo">

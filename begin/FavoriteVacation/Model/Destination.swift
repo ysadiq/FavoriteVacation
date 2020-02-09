@@ -31,25 +31,15 @@
 /// THE SOFTWARE.
 
 import Foundation
-import UIKit
 
-class ViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        tableView.rowHeight = 250
-    }
+struct Destinations: Codable {
+    let destinations: [Destination]
 }
 
-extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("cell \(indexPath.row)")
-        return UITableViewCell()
-    }
+struct Destination: Codable {
+    let id: Int
+    let name: String
+    let location: String
+    let price: Int
+    let imageName: String
 }

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Bali",
+    "location": "Indonesia",
+    "price": "2500",
+    "imageName": "Bali"
+  },
+  {
+    "name": "British Virgin Islands",
+    "location": "Caribbean",
+    "price": "3500",
+    "imageName": "Bali"
+  },
+  {
+    "name": "St. Lucia",
+    "location": "Caribbean",
+    "price": "1500",
+    "imageName": "Bali"
+  },
+  {
+    "name": "Cayman Islands",
+    "location": "Caribbean",
+    "price": "3900",
+    "imageName": "Bali"
+  },
+  {
+    "name": "Barbados",
+    "location": "Caribbean",
+    "price": "1900",
+    "imageName": "Bali"
+  },
+  {
+    "name": "Grenada",
+    "location": "Caribbean",
+    "price": "8500",
+    "imageName": "Bali"
+  },
+  {
+    "name": "Punta Cana",
+    "location": "Dominican Republic",
+    "price": "2500",
+    "imageName": "Bali"
+  }
+]
