@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0PW-Ve-fdn">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,7 +17,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="RYm-Ph-3HN"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorite Spots" id="lgB-Ju-jlN"/>
+                    <tabBarItem key="tabBarItem" title="Favorite Spots" selectedImage="star.fill" catalog="system" id="lgB-Ju-jlN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hji-1Y-aul" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -26,7 +26,7 @@
         <!--All Spots-->
         <scene sceneID="8bn-fW-xFQ">
             <objects>
-                <viewController id="1jY-vT-n8J" sceneMemberID="viewController">
+                <viewController id="1jY-vT-n8J" customClass="ViewController" customModule="FavoriteVacation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fIn-qm-fyQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,6 +56,9 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="1jY-vT-n8J" id="80R-0u-UAE"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>
@@ -72,7 +75,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1wo-93-K2V"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="All Spots" id="glQ-ig-fBO"/>
+                    <tabBarItem key="tabBarItem" title="All Spots" selectedImage="airplane" catalog="system" id="glQ-ig-fBO"/>
+                    <connections>
+                        <outlet property="tableView" destination="xQN-2l-8ay" id="Bav-fp-hMg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7n3-Tw-AgK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,4 +103,8 @@
             <point key="canvasLocation" x="-825" y="269"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="airplane" catalog="system" width="64" height="56"/>
+        <image name="star.fill" catalog="system" width="64" height="58"/>
+    </resources>
 </document>
