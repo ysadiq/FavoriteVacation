@@ -31,3 +31,82 @@
 /// THE SOFTWARE.
 
 import Foundation
+
+class DestinationViewModel {
+
+    let apiService: APIServiceProtocol
+
+    private var destinations: [Destination] = [Destination]()
+
+    private var cellViewModels: [DestinationCellViewModel] = [DestinationCellViewModel]() {
+        didSet {
+            self.reloadTableViewClosure?()
+        }
+    }
+
+    // callback for interfaces
+    var state: State = .empty {
+        didSet {
+            self.updateLoadingStatus?()
+        }
+    }
+
+    var alertMessage: String? {
+        didSet {
+            self.showAlertClosure?()
+        }
+    }
+
+    var numberOfCells: Int {
+        return cellViewModels.count
+    }
+
+    var isAllowSegue: Bool = false
+
+    var reloadTableViewClosure: (()->())?
+    var showAlertClosure: (()->())?
+    var updateLoadingStatus: (()->())?
+
+    init(apiService: APIServiceProtocol = APIService()) {
+        self.apiService = apiService
+    }
+
+    func initFetch() {
+        state = .loading
+        apiService.fetchPopularDestinations { [weak self] (destinations, error) in
+            guard let self = self else {
+                return
+            }
+
+            guard error == nil,
+                let destinations = destinations else {
+                self.state = .error
+                self.alertMessage = error?.localizedDescription
+                return
+            }
+
+            self.processFetchedDestination(destinations: destinations)
+            self.state = .populated
+        }
+    }
+
+    func getCellViewModel(at indexPath: IndexPath) -> DestinationCellViewModel {
+        return cellViewModels[indexPath.row]
+    }
+
+    func createCellViewModel(destination: Destination) -> DestinationCellViewModel {
+        return DestinationCellViewModel(titleText: destination.name,
+                                        locationText: destination.location,
+                                        imageName: destination.imageName,
+                                        price: destination.price)
+    }
+
+    private func processFetchedDestination(destinations: [Destination]) {
+        var vms = [DestinationCellViewModel]()
+        for destination in destinations {
+            vms.append(createCellViewModel(destination: destination))
+        }
+        self.cellViewModels = vms
+    }
+
+}
