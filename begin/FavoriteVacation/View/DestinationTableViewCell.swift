@@ -39,6 +39,8 @@ class DestinationTableViewCell: UITableViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var isFavoriteImage: UIImageView!
+    
     var destinationCellViewModel : DestinationCellViewModel? {
         didSet {
             titleLabel.text = destinationCellViewModel?.titleText
@@ -46,8 +48,13 @@ class DestinationTableViewCell: UITableViewCell {
             if let imageName = destinationCellViewModel?.imageName {
                 mainImageView?.image = UIImage(named: imageName)
             }
+
             if let price = destinationCellViewModel?.price {
                 priceLabel.text = "$\(price)"
+            }
+
+            if let isFavorite = destinationCellViewModel?.isFavorite {
+                isFavoriteImage.image = UIImage(named: isFavorite ? "heart" : "filledHeart")
             }
         }
     }

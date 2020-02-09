@@ -82,8 +82,8 @@
                                                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zhc-Nr-XHz">
-                                                                                            <rect key="frame" x="0.0" y="36.5" width="70" height="27.5"/>
+                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zhc-Nr-XHz">
+                                                                                            <rect key="frame" x="0.0" y="35" width="70" height="30"/>
                                                                                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" constant="30" id="0gk-NS-Opc"/>
@@ -134,6 +134,7 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
+                                                    <outlet property="isFavoriteImage" destination="zhc-Nr-XHz" id="53E-CN-1e2"/>
                                                     <outlet property="locationLabel" destination="dYt-kA-GfR" id="dJk-OV-txo"/>
                                                     <outlet property="mainImageView" destination="0cH-Ed-cYY" id="3eh-M9-dzu"/>
                                                     <outlet property="priceLabel" destination="bYW-Eu-h6L" id="IIt-82-S7n"/>
@@ -181,6 +182,5 @@
     <resources>
         <image name="Bali" width="1024" height="597"/>
         <image name="airplane" catalog="system" width="64" height="56"/>
-        <image name="heart" catalog="system" width="64" height="54"/>
     </resources>
 </document>

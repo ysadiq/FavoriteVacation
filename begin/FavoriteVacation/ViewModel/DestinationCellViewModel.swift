@@ -37,4 +37,5 @@ struct DestinationCellViewModel {
     let locationText: String
     let imageName: String
     let price: Int
+    let isFavorite: Bool
 }

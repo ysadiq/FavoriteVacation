@@ -130,7 +130,6 @@ class DestinationViewController: UIViewController {
             textField.placeholder = "Enter Email"
         }
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: nil)
-
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil)
 
         alertController.addAction(saveAction)
@@ -138,6 +137,7 @@ class DestinationViewController: UIViewController {
 
         self.present(alertController, animated: true, completion: nil)
     }
+    
     @IBAction func segmentValueChanged(_ sender: Any) {
         tableView.reloadData()
     }

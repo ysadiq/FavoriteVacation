@@ -4,48 +4,55 @@
     "location": "Indonesia",
     "price": 2500,
     "imageName": "Bali",
-    "isPrivate": true
+    "isPrivate": true,
+    "isFavorite": true
   },
   {
     "name": "British Virgin Islands",
     "location": "Caribbean",
     "price": 3500,
     "imageName": "Bali",
-    "isPrivate": true
+    "isPrivate": true,
+    "isFavorite": false
   },
   {
     "name": "St. Lucia",
     "location": "Caribbean",
     "price": 1500,
     "imageName": "Bali",
-    "isPrivate": true
+    "isPrivate": true,
+    "isFavorite": false
   },
   {
     "name": "Cayman Islands",
     "location": "Caribbean",
     "price": 3900,
     "imageName": "Bali",
-    "isPrivate": true
+    "isPrivate": true,
+    "isFavorite": true
   },
   {
     "name": "Barbados",
     "location": "Caribbean",
     "price": 1900,
     "imageName": "Bali",
-    "isPrivate": false
+    "isPrivate": false,
+    "isFavorite": false
   },
   {
     "name": "Grenada",
     "location": "Caribbean",
     "price": 8500,
     "imageName": "Bali",
-    "isPrivate": false
+    "isPrivate": false,
+    "isFavorite": true
   },
   {
     "name": "Punta Cana",
     "location": "Dominican Republic",
     "price": 2500,
     "imageName": "Bali",
-    "isPrivate": false
+    "isPrivate": false,
+    "isFavorite": true
   }
 ]

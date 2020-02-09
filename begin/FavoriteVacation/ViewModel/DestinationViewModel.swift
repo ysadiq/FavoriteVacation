@@ -88,7 +88,8 @@ class DestinationViewModel {
         return DestinationCellViewModel(titleText: destination.name,
                                         locationText: destination.location,
                                         imageName: destination.imageName,
-                                        price: destination.price)
+                                        price: destination.price,
+                                        isFavorite: destination.isFavorite)
     }
 
     private func processFetchedDestination(destinations: [Destination]) {
