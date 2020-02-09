@@ -35,10 +35,14 @@ import UIKit
 
 class DestinationViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+
     lazy var viewModel: DestinationViewModel = {
         return DestinationViewModel()
     }()
-
+    private var isPrivateSegment: Bool {
+        segmentedControl.selectedSegmentIndex == 1
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -91,37 +95,65 @@ class DestinationViewController: UIViewController {
         }
 
         viewModel.initFetch()
-
     }
 
     func startLoading() {
-        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+        let alert = UIAlertController(title: nil,
+                                      message: "Please wait...",
+                                      preferredStyle: .alert)
 
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10,
+                                                                     y: 5,
+                                                                     width: 50,
+                                                                     height: 50))
         loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = UIActivityIndicatorView.Style.medium
         loadingIndicator.startAnimating()
 
         alert.view.addSubview(loadingIndicator)
-        present(alert, animated: true, completion: nil)
+        present(alert,
+                animated: true,
+                completion: nil)
     }
 
     func stopLoading() {
-        dismiss(animated: false, completion: nil)
+        dismiss(animated: false,
+                completion: nil)
+    }
+
+    @IBAction func sendButtonClicked(sender : AnyObject){
+        let alertController = UIAlertController(title: "Send Location",
+                                                message: "",
+                                                preferredStyle: UIAlertController.Style.alert)
+
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter Email"
+        }
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: nil)
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil)
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+    @IBAction func segmentValueChanged(_ sender: Any) {
+        tableView.reloadData()
     }
 }
 
 extension DestinationViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfCells
+        return viewModel.numberOfCells(isPrivate: isPrivateSegment)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "destinationCellIdentifier", for: indexPath) as? DestinationTableViewCell else {
             fatalError("Cell not exists in storyboard")
         }
-
-        let cellViewModel = viewModel.getCellViewModel(at: indexPath)
+        
+        let cellViewModel = viewModel.getCellViewModel(at: indexPath, and: isPrivateSegment)
         cell.destinationCellViewModel = cellViewModel
 
         return cell

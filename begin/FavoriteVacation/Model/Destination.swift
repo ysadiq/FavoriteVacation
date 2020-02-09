@@ -41,4 +41,5 @@ struct Destination: Codable {
     let location: String
     let price: Int
     let imageName: String
+    let isPrivate: Bool
 }

@@ -38,11 +38,12 @@ class DestinationViewModel {
 
     private var destinations: [Destination] = [Destination]()
 
-    private var cellViewModels: [DestinationCellViewModel] = [DestinationCellViewModel]() {
+    private var publicCellViewModels: [DestinationCellViewModel] = [DestinationCellViewModel]() {
         didSet {
             self.reloadTableViewClosure?()
         }
     }
+    private var privateCellViewModels: [DestinationCellViewModel] = [DestinationCellViewModel]()
 
     // callback for interfaces
     var state: State = .empty {
@@ -51,20 +52,7 @@ class DestinationViewModel {
         }
     }
 
-    var alertMessage: String? {
-        didSet {
-            self.showAlertClosure?()
-        }
-    }
-
-    var numberOfCells: Int {
-        return cellViewModels.count
-    }
-
-    var isAllowSegue: Bool = false
-
     var reloadTableViewClosure: (()->())?
-    var showAlertClosure: (()->())?
     var updateLoadingStatus: (()->())?
 
     init(apiService: APIServiceProtocol = APIService()) {
@@ -80,8 +68,6 @@ class DestinationViewModel {
 
             guard error == nil,
                 let destinations = destinations else {
-                self.state = .error
-                self.alertMessage = error?.localizedDescription
                 return
             }
 
@@ -90,8 +76,12 @@ class DestinationViewModel {
         }
     }
 
-    func getCellViewModel(at indexPath: IndexPath) -> DestinationCellViewModel {
-        return cellViewModels[indexPath.row]
+    func getCellViewModel(at indexPath: IndexPath, and isPrivate: Bool) -> DestinationCellViewModel {
+        if isPrivate {
+            return privateCellViewModels[indexPath.row]
+        } else {
+            return publicCellViewModels[indexPath.row]
+        }
     }
 
     func createCellViewModel(destination: Destination) -> DestinationCellViewModel {
@@ -102,11 +92,21 @@ class DestinationViewModel {
     }
 
     private func processFetchedDestination(destinations: [Destination]) {
-        var vms = [DestinationCellViewModel]()
+        var privateVMS = [DestinationCellViewModel]()
+        var publicVMS = [DestinationCellViewModel]()
         for destination in destinations {
-            vms.append(createCellViewModel(destination: destination))
+            if destination.isPrivate {
+                privateVMS.append(createCellViewModel(destination: destination))
+            } else {
+                publicVMS.append(createCellViewModel(destination: destination))
+            }
         }
-        self.cellViewModels = vms
+        publicCellViewModels = publicVMS
+        privateCellViewModels = privateVMS
+    }
+
+    func numberOfCells(isPrivate: Bool) -> Int {
+        return isPrivate ? privateCellViewModels.count : publicCellViewModels.count
     }
 
 }
