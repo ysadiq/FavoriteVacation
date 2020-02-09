@@ -38,16 +38,15 @@ class DestinationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // config tableView
+        tableView.rowHeight = 250
     }
 }
 
 extension DestinationViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250.0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

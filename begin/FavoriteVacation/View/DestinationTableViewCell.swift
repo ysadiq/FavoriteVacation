@@ -38,6 +38,7 @@ class DestinationTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var sendButton: UIButton!
     var destinationCellViewModel : DestinationCellViewModel? {
         didSet {
             titleLabel.text = destinationCellViewModel?.titleText

@@ -139,6 +139,13 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="locationLabel" destination="dYt-kA-GfR" id="dJk-OV-txo"/>
+                                                    <outlet property="mainImageView" destination="0cH-Ed-cYY" id="3eh-M9-dzu"/>
+                                                    <outlet property="priceLabel" destination="bYW-Eu-h6L" id="IIt-82-S7n"/>
+                                                    <outlet property="sendButton" destination="H0i-gb-Gmm" id="8SP-30-Dyg"/>
+                                                    <outlet property="titleLabel" destination="L2V-dG-gpN" id="RDU-SS-Qgr"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
