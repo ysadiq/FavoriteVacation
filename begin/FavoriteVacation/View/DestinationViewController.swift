@@ -43,6 +43,7 @@ class DestinationViewController: UIViewController {
     private var isPrivateSegment: Bool {
         segmentedControl.selectedSegmentIndex == 1
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -109,37 +110,13 @@ class DestinationViewController: UIViewController {
         loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = UIActivityIndicatorView.Style.medium
         loadingIndicator.startAnimating()
-
         alert.view.addSubview(loadingIndicator)
-        present(alert,
-                animated: true,
-                completion: nil)
+
+        present(alert, animated: true, completion: nil)
     }
 
     func stopLoading() {
-        dismiss(animated: false,
-                completion: nil)
-    }
-
-    @IBAction func sendButtonClicked(sender : AnyObject){
-        let alertController = UIAlertController(title: "Send Location",
-                                                message: "",
-                                                preferredStyle: UIAlertController.Style.alert)
-
-        alertController.addTextField { (textField : UITextField!) -> Void in
-            textField.placeholder = "Enter Email"
-        }
-        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: nil)
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil)
-
-        alertController.addAction(saveAction)
-        alertController.addAction(cancelAction)
-
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    @IBAction func segmentValueChanged(_ sender: Any) {
-        tableView.reloadData()
+        dismiss(animated: false, completion: nil)
     }
 }
 
@@ -158,4 +135,27 @@ extension DestinationViewController: UITableViewDataSource {
 
         return cell
     }
+}
+
+extension DestinationViewController {
+    @IBAction func sendButtonClicked(sender : AnyObject){
+         let alertController = UIAlertController(title: "Send Location",
+                                                 message: "",
+                                                 preferredStyle: UIAlertController.Style.alert)
+
+         alertController.addTextField { (textField : UITextField!) -> Void in
+             textField.placeholder = "Enter Email"
+         }
+         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: nil)
+         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil)
+
+         alertController.addAction(saveAction)
+         alertController.addAction(cancelAction)
+
+         self.present(alertController, animated: true, completion: nil)
+     }
+
+     @IBAction func segmentValueChanged(_ sender: Any) {
+         tableView.reloadData()
+     }
 }

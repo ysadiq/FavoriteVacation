@@ -39,7 +39,7 @@ class DestinationTableViewCell: UITableViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var sendButton: UIButton!
-    @IBOutlet weak var isFavoriteImage: UIImageView!
+    @IBOutlet weak var isFavoriteImageView: UIImageView!
     
     var destinationCellViewModel : DestinationCellViewModel? {
         didSet {
@@ -54,7 +54,7 @@ class DestinationTableViewCell: UITableViewCell {
             }
 
             if let isFavorite = destinationCellViewModel?.isFavorite {
-                isFavoriteImage.image = UIImage(named: isFavorite ? "heart" : "filledHeart")
+                isFavoriteImageView.image = UIImage(named: isFavorite ? "heart" : "filledHeart")
             }
         }
     }

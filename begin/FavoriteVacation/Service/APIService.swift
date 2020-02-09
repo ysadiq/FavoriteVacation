@@ -37,7 +37,6 @@ protocol APIServiceProtocol {
 }
 
 class APIService: APIServiceProtocol {
-    // Simulate a long waiting for fetching
     func fetchPopularDestinations(complete: @escaping (_ destinations: [Destination]?, _ error: Error?)->()) {
         DispatchQueue.global().async {
             guard let path = Bundle.main.path(forResource: "content", ofType: "json") else {
@@ -48,7 +47,7 @@ class APIService: APIServiceProtocol {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             let destinations = try! decoder.decode([Destination].self, from: data)
-            sleep(3)
+            sleep(2)
             complete(destinations, nil)
         }
     }

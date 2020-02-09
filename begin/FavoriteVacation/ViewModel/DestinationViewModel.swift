@@ -35,9 +35,7 @@ import Foundation
 class DestinationViewModel {
 
     let apiService: APIServiceProtocol
-
     private var destinations: [Destination] = [Destination]()
-
     private var publicCellViewModels: [DestinationCellViewModel] = [DestinationCellViewModel]() {
         didSet {
             self.reloadTableViewClosure?()
@@ -92,22 +90,21 @@ class DestinationViewModel {
                                         isFavorite: destination.isFavorite)
     }
 
-    private func processFetchedDestination(destinations: [Destination]) {
-        var privateVMS = [DestinationCellViewModel]()
-        var publicVMS = [DestinationCellViewModel]()
-        for destination in destinations {
-            if destination.isPrivate {
-                privateVMS.append(createCellViewModel(destination: destination))
-            } else {
-                publicVMS.append(createCellViewModel(destination: destination))
-            }
-        }
-        publicCellViewModels = publicVMS
-        privateCellViewModels = privateVMS
-    }
-
     func numberOfCells(isPrivate: Bool) -> Int {
         return isPrivate ? privateCellViewModels.count : publicCellViewModels.count
     }
 
+    private func processFetchedDestination(destinations: [Destination]) {
+        var privateViewModels = [DestinationCellViewModel]()
+        var publicViewModels = [DestinationCellViewModel]()
+        for destination in destinations {
+            if destination.isPrivate {
+                privateViewModels.append(createCellViewModel(destination: destination))
+            } else {
+                publicViewModels.append(createCellViewModel(destination: destination))
+            }
+        }
+        publicCellViewModels = publicViewModels
+        privateCellViewModels = privateViewModels
+    }
 }
