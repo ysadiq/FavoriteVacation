@@ -46,7 +46,9 @@ class DestinationTableViewCell: UITableViewCell {
             if let imageName = destinationCellViewModel?.imageName {
                 mainImageView?.image = UIImage(named: imageName)
             }
-            priceLabel.text = "\(String(describing: destinationCellViewModel?.price))"
+            if let price = destinationCellViewModel?.price {
+                priceLabel.text = "$\(price)"
+            }
         }
     }
 }
