@@ -47,7 +47,7 @@ class DestinationViewController: UIViewController {
     }
 
     func initView() {
-        self.navigationItem.title = "Favorite Vacation"
+        self.tabBarController?.title = "Favorite Vacation"
 
         // config tableView
         tableView.estimatedRowHeight = 250
@@ -55,16 +55,6 @@ class DestinationViewController: UIViewController {
     }
 
     func initViewModel() {
-
-        // Naive binding
-        viewModel.showAlertClosure = { [weak self] () in
-            DispatchQueue.main.async {
-                if let message = self?.viewModel.alertMessage {
-                    self?.showAlert(message)
-                }
-            }
-        }
-
         viewModel.updateLoadingStatus = { [weak self] () in
             guard let self = self else {
                 return
@@ -76,17 +66,17 @@ class DestinationViewController: UIViewController {
                 }
                 switch self.viewModel.state {
                 case .empty, .error:
-//                    self.activityIndicator.stopAnimating()
+                    self.stopLoading()
                     UIView.animate(withDuration: 0.2, animations: {
                         self.tableView.alpha = 0.0
                     })
                 case .loading:
-//                    self.activityIndicator.startAnimating()
+                    self.startLoading()
                     UIView.animate(withDuration: 0.2, animations: {
                         self.tableView.alpha = 0.0
                     })
                 case .populated:
-//                    self.activityIndicator.stopAnimating()
+                    self.stopLoading()
                     UIView.animate(withDuration: 0.2, animations: {
                         self.tableView.alpha = 1.0
                     })
@@ -104,10 +94,20 @@ class DestinationViewController: UIViewController {
 
     }
 
-    func showAlert(_ message: String) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+    func startLoading() {
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+        loadingIndicator.startAnimating()
+
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+    }
+
+    func stopLoading() {
+        dismiss(animated: false, completion: nil)
     }
 }
 
