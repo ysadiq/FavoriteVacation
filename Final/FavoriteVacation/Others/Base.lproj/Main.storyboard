@@ -174,10 +174,10 @@
             </objects>
             <point key="canvasLocation" x="54" y="-13"/>
         </scene>
-        <!--View Controller-->
+        <!--Share View Controller-->
         <scene sceneID="e5i-VF-ILR">
             <objects>
-                <viewController id="Vcf-xT-hNy" sceneMemberID="viewController">
+                <viewController id="Vcf-xT-hNy" customClass="ShareViewController" customModule="FavoriteVacation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eht-82-Xnk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,6 +207,9 @@
                                             <constraint firstAttribute="height" constant="41" id="cqc-rf-Fwt"/>
                                         </constraints>
                                         <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="sendButtonPressed:" destination="Vcf-xT-hNy" eventType="touchUpInside" id="Rtz-4v-f6E"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYT-96-H9f">
                                         <rect key="frame" x="0.0" y="182.5" width="305" height="41"/>
@@ -214,6 +217,9 @@
                                             <constraint firstAttribute="height" constant="41" id="9fv-QY-lBx"/>
                                         </constraints>
                                         <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="Vcf-xT-hNy" eventType="touchUpInside" id="1b9-UI-lcZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -226,6 +232,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VYm-F6-WTC"/>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="ZYT-96-H9f" id="5tO-Xs-MEc"/>
+                        <outlet property="sendButton" destination="FaC-KN-rU6" id="747-tU-Jh4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WUv-uU-V0A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
