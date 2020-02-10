@@ -31,9 +31,9 @@
 /// THE SOFTWARE.
 
 struct DestinationCellViewModel {
-  let titleText: String
-  let locationText: String
-  let imageName: String
-  let price: Int
-  let isFavorite: Bool
+  let titleText: String?
+  let locationText: String?
+  let imageName: String?
+  let price: Int?
+  let isFavorite: Bool?
 }

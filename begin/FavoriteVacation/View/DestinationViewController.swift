@@ -116,7 +116,10 @@ class DestinationViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension DestinationViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return viewModel.numberOfCells(isPrivate: isPrivateSegment)
+    guard let numberOfCells = viewModel.numberOfCells(isPrivate: isPrivateSegment) else {
+      return 0
+    }
+    return numberOfCells
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

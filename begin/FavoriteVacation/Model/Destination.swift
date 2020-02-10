@@ -35,10 +35,10 @@ struct Destinations: Codable {
 }
 
 struct Destination: Codable {
-  let name: String
-  let location: String
-  let price: Int
-  let imageName: String
-  let isPrivate: Bool
-  let isFavorite: Bool
+  let name: String?
+  let location: String?
+  let price: Int?
+  let imageName: String?
+  let isPrivate: Bool?
+  let isFavorite: Bool?
 }

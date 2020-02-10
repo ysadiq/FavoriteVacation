@@ -33,10 +33,10 @@
 import Foundation
 
 class DestinationViewModel {
-  let apiService: APIServiceProtocol
-  private var destinations: [Destination] = [Destination]()
-  private var publicCellViewModels: [DestinationCellViewModel] = [DestinationCellViewModel]()
-  private var privateCellViewModels: [DestinationCellViewModel] = [DestinationCellViewModel]()
+  let apiService: APIServiceProtocol?
+  private var destinations = [Destination]()
+  private var publicCellViewModels: [DestinationCellViewModel]?
+  private var privateCellViewModels: [DestinationCellViewModel]?
   var reloadTableViewClosure: (()->())?
   var updateLoadingStatus: (()->())?
   var state: State = .empty {
@@ -54,7 +54,7 @@ class DestinationViewModel {
   
   func initFetch() {
     state = .loading
-    apiService.fetchPopularDestinations { [weak self] (destinations, error) in
+    apiService?.fetchPopularDestinations { [weak self] (destinations, error) in
       guard let self = self else {
         return
       }
@@ -69,11 +69,11 @@ class DestinationViewModel {
     }
   }
   
-  func getCellViewModel(at indexPath: IndexPath, and isPrivate: Bool) -> DestinationCellViewModel {
+  func getCellViewModel(at indexPath: IndexPath, and isPrivate: Bool) -> DestinationCellViewModel? {
     if isPrivate {
-      return privateCellViewModels[indexPath.row]
+      return privateCellViewModels?[indexPath.row]
     } else {
-      return publicCellViewModels[indexPath.row]
+      return publicCellViewModels?[indexPath.row]
     }
   }
   
@@ -85,8 +85,8 @@ class DestinationViewModel {
                                     isFavorite: destination.isFavorite)
   }
   
-  func numberOfCells(isPrivate: Bool) -> Int {
-    return isPrivate ? privateCellViewModels.count : publicCellViewModels.count
+  func numberOfCells(isPrivate: Bool) -> Int? {
+    return isPrivate ? privateCellViewModels?.count : publicCellViewModels?.count
   }
   
   private func processFetchedDestination(destinations: [Destination]) {
@@ -94,7 +94,7 @@ class DestinationViewModel {
     var publicViewModels = [DestinationCellViewModel]()
 
     for destination in destinations {
-      if destination.isPrivate {
+      if let isPrivate = destination.isPrivate, isPrivate {
         privateViewModels.append(createCellViewModel(destination: destination))
       } else {
         publicViewModels.append(createCellViewModel(destination: destination))
