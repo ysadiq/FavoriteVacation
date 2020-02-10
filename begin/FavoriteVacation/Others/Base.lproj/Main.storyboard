@@ -44,7 +44,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="rUE-rX-PUi" userLabel="Image + Details + Send">
                                                             <rect key="frame" x="0.0" y="0.0" width="355" height="250"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="355" placeholderIntrinsicHeight="128" image="Bali" translatesAutoresizingMaskIntoConstraints="NO" id="0cH-Ed-cYY">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="355" placeholderIntrinsicHeight="128" image="bali" translatesAutoresizingMaskIntoConstraints="NO" id="0cH-Ed-cYY">
                                                                     <rect key="frame" x="0.0" y="0.0" width="355" height="128"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="128" id="U3j-Rg-9wI"/>
@@ -176,7 +176,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bali" width="1024" height="597"/>
         <image name="airplane" catalog="system" width="64" height="56"/>
+        <image name="bali" width="1024" height="597"/>
     </resources>
 </document>
