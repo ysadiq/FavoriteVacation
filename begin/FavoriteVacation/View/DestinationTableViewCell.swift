@@ -30,32 +30,31 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import Foundation
 import UIKit
 
 class DestinationTableViewCell: UITableViewCell {
-    @IBOutlet weak var mainImageView: UIImageView!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var sendButton: UIButton!
-    @IBOutlet weak var isFavoriteImageView: UIImageView!
-    
-    var destinationCellViewModel : DestinationCellViewModel? {
-        didSet {
-            titleLabel.text = destinationCellViewModel?.titleText
-            locationLabel.text = destinationCellViewModel?.locationText
-            if let imageName = destinationCellViewModel?.imageName {
-                mainImageView?.image = UIImage(named: imageName)
-            }
-
-            if let price = destinationCellViewModel?.price {
-                priceLabel.text = "$\(price)"
-            }
-
-            if let isFavorite = destinationCellViewModel?.isFavorite {
-                isFavoriteImageView.image = UIImage(named: isFavorite ? "heart" : "filledHeart")
-            }
-        }
+  @IBOutlet weak var mainImageView: UIImageView!
+  @IBOutlet weak var priceLabel: UILabel!
+  @IBOutlet weak var locationLabel: UILabel!
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var sendButton: UIButton!
+  @IBOutlet weak var isFavoriteImageView: UIImageView!
+  
+  var destinationCellViewModel : DestinationCellViewModel? {
+    didSet {
+      titleLabel.text = destinationCellViewModel?.titleText
+      locationLabel.text = destinationCellViewModel?.locationText
+      if let imageName = destinationCellViewModel?.imageName {
+        mainImageView?.image = UIImage(named: imageName)
+      }
+      
+      if let price = destinationCellViewModel?.price {
+        priceLabel.text = "$\(price)"
+      }
+      
+      if let isFavorite = destinationCellViewModel?.isFavorite {
+        isFavoriteImageView.image = UIImage(named: isFavorite ? "heart" : "filledHeart")
+      }
     }
+  }
 }

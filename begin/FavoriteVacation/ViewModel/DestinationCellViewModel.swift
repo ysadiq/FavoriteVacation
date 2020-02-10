@@ -30,12 +30,10 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import Foundation
-
 struct DestinationCellViewModel {
-    let titleText: String
-    let locationText: String
-    let imageName: String
-    let price: Int
-    let isFavorite: Bool
+  let titleText: String
+  let locationText: String
+  let imageName: String
+  let price: Int
+  let isFavorite: Bool
 }

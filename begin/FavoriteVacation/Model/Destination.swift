@@ -30,17 +30,15 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import Foundation
-
 struct Destinations: Codable {
-    let destinations: [Destination]
+  let destinations: [Destination]
 }
 
 struct Destination: Codable {
-    let name: String
-    let location: String
-    let price: Int
-    let imageName: String
-    let isPrivate: Bool
-    let isFavorite: Bool
+  let name: String
+  let location: String
+  let price: Int
+  let imageName: String
+  let isPrivate: Bool
+  let isFavorite: Bool
 }

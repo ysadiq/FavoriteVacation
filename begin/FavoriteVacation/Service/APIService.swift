@@ -33,22 +33,22 @@
 import Foundation
 
 protocol APIServiceProtocol {
-    func fetchPopularDestinations(complete: @escaping (_ destinations: [Destination]?, _ error: Error?)->())
+  func fetchPopularDestinations(onCompletion: @escaping (_ destinations: [Destination]?, _ error: Error?)->())
 }
 
 class APIService: APIServiceProtocol {
-    func fetchPopularDestinations(complete: @escaping (_ destinations: [Destination]?, _ error: Error?)->()) {
-        DispatchQueue.global().async {
-            guard let path = Bundle.main.path(forResource: "content", ofType: "json") else {
-                complete(nil, nil)
-                return
-            }
-            let data = try! Data(contentsOf: URL(fileURLWithPath: path))
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-            let destinations = try! decoder.decode([Destination].self, from: data)
-            sleep(2)
-            complete(destinations, nil)
-        }
+  func fetchPopularDestinations(onCompletion: @escaping (_ destinations: [Destination]?, _ error: Error?)->()) {
+    DispatchQueue.global().async {
+      guard let path = Bundle.main.path(forResource: "content", ofType: "json") else {
+        onCompletion(nil, nil)
+        return
+      }
+      let data = try! Data(contentsOf: URL(fileURLWithPath: path))
+      let decoder = JSONDecoder()
+      decoder.dateDecodingStrategy = .iso8601
+      let destinations = try! decoder.decode([Destination].self, from: data)
+      sleep(2)
+      onCompletion(destinations, nil)
     }
+  }
 }

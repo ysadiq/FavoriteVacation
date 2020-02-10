@@ -33,77 +33,74 @@
 import Foundation
 
 class DestinationViewModel {
-
-    let apiService: APIServiceProtocol
-    private var destinations: [Destination] = [Destination]()
-    private var publicCellViewModels: [DestinationCellViewModel] = [DestinationCellViewModel]()
-    private var privateCellViewModels: [DestinationCellViewModel] = [DestinationCellViewModel]()
-
-    // callback for interfaces
-    var state: State = .empty {
-        didSet {
-            self.updateLoadingStatus?()
-            if state == .populated {
-                self.reloadTableViewClosure?()
-            }
-        }
+  
+  let apiService: APIServiceProtocol
+  private var destinations: [Destination] = [Destination]()
+  private var publicCellViewModels: [DestinationCellViewModel] = [DestinationCellViewModel]()
+  private var privateCellViewModels: [DestinationCellViewModel] = [DestinationCellViewModel]()
+  var reloadTableViewClosure: (()->())?
+  var updateLoadingStatus: (()->())?
+  var state: State = .empty {
+    didSet {
+      self.updateLoadingStatus?()
+      if state == .populated {
+        self.reloadTableViewClosure?()
+      }
     }
-
-    var reloadTableViewClosure: (()->())?
-    var updateLoadingStatus: (()->())?
-
-    init(apiService: APIServiceProtocol = APIService()) {
-        self.apiService = apiService
+  }
+  
+  init(apiService: APIServiceProtocol = APIService()) {
+    self.apiService = apiService
+  }
+  
+  func initFetch() {
+    state = .loading
+    apiService.fetchPopularDestinations { [weak self] (destinations, error) in
+      guard let self = self else {
+        return
+      }
+      
+      guard error == nil,
+        let destinations = destinations else {
+          return
+      }
+      
+      self.processFetchedDestination(destinations: destinations)
+      self.state = .populated
     }
-
-    func initFetch() {
-        state = .loading
-        apiService.fetchPopularDestinations { [weak self] (destinations, error) in
-            guard let self = self else {
-                return
-            }
-
-            guard error == nil,
-                let destinations = destinations else {
-                return
-            }
-
-            self.processFetchedDestination(destinations: destinations)
-            self.state = .populated
-        }
+  }
+  
+  func getCellViewModel(at indexPath: IndexPath, and isPrivate: Bool) -> DestinationCellViewModel {
+    if isPrivate {
+      return privateCellViewModels[indexPath.row]
+    } else {
+      return publicCellViewModels[indexPath.row]
     }
-
-    func getCellViewModel(at indexPath: IndexPath, and isPrivate: Bool) -> DestinationCellViewModel {
-        if isPrivate {
-            return privateCellViewModels[indexPath.row]
-        } else {
-            return publicCellViewModels[indexPath.row]
-        }
+  }
+  
+  func createCellViewModel(destination: Destination) -> DestinationCellViewModel {
+    return DestinationCellViewModel(titleText: destination.name,
+                                    locationText: destination.location,
+                                    imageName: destination.imageName,
+                                    price: destination.price,
+                                    isFavorite: destination.isFavorite)
+  }
+  
+  func numberOfCells(isPrivate: Bool) -> Int {
+    return isPrivate ? privateCellViewModels.count : publicCellViewModels.count
+  }
+  
+  private func processFetchedDestination(destinations: [Destination]) {
+    var privateViewModels = [DestinationCellViewModel]()
+    var publicViewModels = [DestinationCellViewModel]()
+    for destination in destinations {
+      if destination.isPrivate {
+        privateViewModels.append(createCellViewModel(destination: destination))
+      } else {
+        publicViewModels.append(createCellViewModel(destination: destination))
+      }
     }
-
-    func createCellViewModel(destination: Destination) -> DestinationCellViewModel {
-        return DestinationCellViewModel(titleText: destination.name,
-                                        locationText: destination.location,
-                                        imageName: destination.imageName,
-                                        price: destination.price,
-                                        isFavorite: destination.isFavorite)
-    }
-
-    func numberOfCells(isPrivate: Bool) -> Int {
-        return isPrivate ? privateCellViewModels.count : publicCellViewModels.count
-    }
-
-    private func processFetchedDestination(destinations: [Destination]) {
-        var privateViewModels = [DestinationCellViewModel]()
-        var publicViewModels = [DestinationCellViewModel]()
-        for destination in destinations {
-            if destination.isPrivate {
-                privateViewModels.append(createCellViewModel(destination: destination))
-            } else {
-                publicViewModels.append(createCellViewModel(destination: destination))
-            }
-        }
-        publicCellViewModels = publicViewModels
-        privateCellViewModels = privateViewModels
-    }
+    publicCellViewModels = publicViewModels
+    privateCellViewModels = privateViewModels
+  }
 }
