@@ -19,6 +19,7 @@
 		99701F0323F055F8003436A9 /* DestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99701F0223F055F8003436A9 /* DestinationViewModel.swift */; };
 		99701F0A23F05A8F003436A9 /* DestinationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99701F0923F05A8F003436A9 /* DestinationCellViewModel.swift */; };
 		99701F0C23F0A599003436A9 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99701F0B23F0A599003436A9 /* State.swift */; };
+		99701F0E23F209F9003436A9 /* ShareViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99701F0D23F209F8003436A9 /* ShareViewContoller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		99701F0223F055F8003436A9 /* DestinationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewModel.swift; sourceTree = "<group>"; };
 		99701F0923F05A8F003436A9 /* DestinationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCellViewModel.swift; sourceTree = "<group>"; };
 		99701F0B23F0A599003436A9 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		99701F0D23F209F8003436A9 /* ShareViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewContoller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				99701EF823EF6C3D003436A9 /* DestinationViewController.swift */,
 				99701EFC23F051F9003436A9 /* DestinationTableViewCell.swift */,
+				99701F0D23F209F8003436A9 /* ShareViewContoller.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				99701EFD23F051F9003436A9 /* DestinationTableViewCell.swift in Sources */,
 				99701F0323F055F8003436A9 /* DestinationViewModel.swift in Sources */,
 				99701F0123F054BC003436A9 /* APIService.swift in Sources */,
+				99701F0E23F209F9003436A9 /* ShareViewContoller.swift in Sources */,
 				99701EF923EF6C3D003436A9 /* DestinationViewController.swift in Sources */,
 				185CB1FC23C78CE6009F7571 /* AppDelegate.swift in Sources */,
 				99701F0A23F05A8F003436A9 /* DestinationCellViewModel.swift in Sources */,
