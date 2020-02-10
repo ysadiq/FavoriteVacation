@@ -30,25 +30,31 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import Foundation
+import UIKit
 
-protocol APIServiceProtocol {
-  func fetchPopularDestinations(onCompletion: @escaping (_ destinations: [Destination]?, _ error: Error?)->())
+class ShareViewController: UIViewController {
+  @IBOutlet weak var sendButton: UIButton!
+  @IBOutlet weak var cancelButton: UIButton!
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    addBorder(sendButton)
+    addBorder(cancelButton)
+  }
+
+  func addBorder(_ button: UIButton) {
+    button.layer.borderWidth = 1.0
+    button.layer.cornerRadius = 8.0
+    button.layer.borderColor = UIColor.black.cgColor
+  }
 }
 
-class APIService: APIServiceProtocol {
-  func fetchPopularDestinations(onCompletion: @escaping (_ destinations: [Destination]?, _ error: Error?)->()) {
-    DispatchQueue.global().async {
-      guard let path = Bundle.main.path(forResource: "content", ofType: "json") else {
-        onCompletion(nil, nil)
-        return
-      }
-      let data = try! Data(contentsOf: URL(fileURLWithPath: path))
-      let decoder = JSONDecoder()
-      decoder.dateDecodingStrategy = .iso8601
-      let destinations = try! decoder.decode([Destination].self, from: data)
-//      sleep(2)
-      onCompletion(destinations, nil)
-    }
+extension ShareViewController {
+  @IBAction func sendButtonPressed(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
+  }
+
+  @IBAction func cancelButtonPressed(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
   }
 }

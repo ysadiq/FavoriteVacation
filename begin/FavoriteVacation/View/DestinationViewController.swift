@@ -137,23 +137,6 @@ extension DestinationViewController: UITableViewDataSource {
 
 // MARK: - User Interface Actions
 extension DestinationViewController {
-  @IBAction func sendButtonClicked(sender: AnyObject){
-    let alertController = UIAlertController(title: "Share Location with a friend",
-                                            message: "",
-                                            preferredStyle: .alert)
-    
-    alertController.addTextField { (textField) in
-      textField.placeholder = "Enter Email"
-    }
-    let saveAction = UIAlertAction(title: "Share", style: .default, handler: nil)
-    let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-    
-    alertController.addAction(saveAction)
-    alertController.addAction(cancelAction)
-    
-    present(alertController, animated: true, completion: nil)
-  }
-  
   @IBAction func segmentValueChanged(_ sender: Any) {
     tableView.reloadData()
   }
