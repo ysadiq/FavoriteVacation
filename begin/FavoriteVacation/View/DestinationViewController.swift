@@ -146,7 +146,7 @@ extension DestinationViewController {
          alertController.addTextField { (textField : UITextField!) -> Void in
              textField.placeholder = "Enter Email"
          }
-         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: nil)
+         let saveAction = UIAlertAction(title: "Send", style: UIAlertAction.Style.default, handler: nil)
          let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil)
 
          alertController.addAction(saveAction)
