@@ -36,17 +36,16 @@ class DestinationViewModel {
 
     let apiService: APIServiceProtocol
     private var destinations: [Destination] = [Destination]()
-    private var publicCellViewModels: [DestinationCellViewModel] = [DestinationCellViewModel]() {
-        didSet {
-            self.reloadTableViewClosure?()
-        }
-    }
+    private var publicCellViewModels: [DestinationCellViewModel] = [DestinationCellViewModel]()
     private var privateCellViewModels: [DestinationCellViewModel] = [DestinationCellViewModel]()
 
     // callback for interfaces
     var state: State = .empty {
         didSet {
             self.updateLoadingStatus?()
+            if state == .populated {
+                self.reloadTableViewClosure?()
+            }
         }
     }
 

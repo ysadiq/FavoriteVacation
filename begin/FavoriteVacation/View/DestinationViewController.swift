@@ -52,8 +52,6 @@ class DestinationViewController: UIViewController {
     }
 
     func initView() {
-        self.tabBarController?.title = "Favorite Vacation"
-
         // config tableView
         tableView.estimatedRowHeight = 250
         tableView.rowHeight = UITableView.automaticDimension
