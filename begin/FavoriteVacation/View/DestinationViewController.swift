@@ -126,7 +126,7 @@ extension DestinationViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "destinationCellIdentifier", for: indexPath) as? DestinationTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "destinationCell", for: indexPath) as? DestinationTableViewCell else {
             fatalError("Cell not exists in storyboard")
         }
         
