@@ -39,11 +39,11 @@ class DestinationTableViewCell: UITableViewCell {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var sendButton: UIButton!
   @IBOutlet weak var isFavoriteImageView: UIImageView!
-  
-  var destinationCellViewModel : DestinationCellViewModel? {
+  var destinationCellViewModel: DestinationCellViewModel? {
     didSet {
       titleLabel.text = destinationCellViewModel?.titleText
       locationLabel.text = destinationCellViewModel?.locationText
+
       if let imageName = destinationCellViewModel?.imageName {
         mainImageView?.image = UIImage(named: imageName)
       }

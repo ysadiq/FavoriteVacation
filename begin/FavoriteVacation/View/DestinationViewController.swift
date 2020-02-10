@@ -35,14 +35,12 @@ import UIKit
 class DestinationViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var segmentedControl: UISegmentedControl!
-  
+  var isPrivateSegment: Bool {
+    segmentedControl.selectedSegmentIndex == 1
+  }
   lazy var viewModel: DestinationViewModel = {
     return DestinationViewModel()
   }()
-  
-  private var isPrivateSegment: Bool {
-    segmentedControl.selectedSegmentIndex == 1
-  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -101,10 +99,7 @@ class DestinationViewController: UIViewController {
                                   message: "Please wait...",
                                   preferredStyle: .alert)
     
-    let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10,
-                                                                 y: 5,
-                                                                 width: 50,
-                                                                 height: 50))
+    let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
     loadingIndicator.hidesWhenStopped = true
     loadingIndicator.style = .medium
     loadingIndicator.startAnimating()
@@ -125,7 +120,8 @@ extension DestinationViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "destinationCell", for: indexPath) as? DestinationTableViewCell else {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "destinationCell",
+                                                   for: indexPath) as? DestinationTableViewCell else {
       fatalError("Cell not exists in storyboard")
     }
     
@@ -138,12 +134,12 @@ extension DestinationViewController: UITableViewDataSource {
 
 // MARK: - User Interface Actions
 extension DestinationViewController {
-  @IBAction func sendButtonClicked(sender : AnyObject){
+  @IBAction func sendButtonClicked(sender: AnyObject){
     let alertController = UIAlertController(title: "Share Location with a friend",
                                             message: "",
                                             preferredStyle: .alert)
     
-    alertController.addTextField { (textField : UITextField!) -> Void in
+    alertController.addTextField { (textField) in
       textField.placeholder = "Enter Email"
     }
     let saveAction = UIAlertAction(title: "Share", style: .default, handler: nil)
@@ -152,7 +148,7 @@ extension DestinationViewController {
     alertController.addAction(saveAction)
     alertController.addAction(cancelAction)
     
-    self.present(alertController, animated: true, completion: nil)
+    present(alertController, animated: true, completion: nil)
   }
   
   @IBAction func segmentValueChanged(_ sender: Any) {

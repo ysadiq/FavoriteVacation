@@ -33,7 +33,6 @@
 import Foundation
 
 class DestinationViewModel {
-  
   let apiService: APIServiceProtocol
   private var destinations: [Destination] = [Destination]()
   private var publicCellViewModels: [DestinationCellViewModel] = [DestinationCellViewModel]()
@@ -42,9 +41,9 @@ class DestinationViewModel {
   var updateLoadingStatus: (()->())?
   var state: State = .empty {
     didSet {
-      self.updateLoadingStatus?()
+      updateLoadingStatus?()
       if state == .populated {
-        self.reloadTableViewClosure?()
+        reloadTableViewClosure?()
       }
     }
   }
@@ -93,6 +92,7 @@ class DestinationViewModel {
   private func processFetchedDestination(destinations: [Destination]) {
     var privateViewModels = [DestinationCellViewModel]()
     var publicViewModels = [DestinationCellViewModel]()
+
     for destination in destinations {
       if destination.isPrivate {
         privateViewModels.append(createCellViewModel(destination: destination))
@@ -100,6 +100,7 @@ class DestinationViewModel {
         publicViewModels.append(createCellViewModel(destination: destination))
       }
     }
+
     publicCellViewModels = publicViewModels
     privateCellViewModels = privateViewModels
   }
