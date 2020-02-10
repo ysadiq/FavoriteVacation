@@ -137,14 +137,14 @@ extension DestinationViewController: UITableViewDataSource {
 
 extension DestinationViewController {
     @IBAction func sendButtonClicked(sender : AnyObject){
-         let alertController = UIAlertController(title: "Send Location",
+         let alertController = UIAlertController(title: "Share Location with a friend",
                                                  message: "",
                                                  preferredStyle: UIAlertController.Style.alert)
 
          alertController.addTextField { (textField : UITextField!) -> Void in
              textField.placeholder = "Enter Email"
          }
-         let saveAction = UIAlertAction(title: "Send", style: UIAlertAction.Style.default, handler: nil)
+         let saveAction = UIAlertAction(title: "Share", style: UIAlertAction.Style.default, handler: nil)
          let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil)
 
          alertController.addAction(saveAction)
