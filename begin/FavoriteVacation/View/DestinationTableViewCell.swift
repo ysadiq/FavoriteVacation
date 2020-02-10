@@ -57,4 +57,12 @@ class DestinationTableViewCell: UITableViewCell {
       }
     }
   }
+
+  override func awakeFromNib() {
+    super.awakeFromNib()
+
+    sendButton.layer.borderWidth = 1.0
+    sendButton.layer.cornerRadius = 8.0
+    sendButton.layer.borderColor = UIColor.black.cgColor
+  }
 }

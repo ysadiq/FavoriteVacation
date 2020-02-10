@@ -42,7 +42,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="rUE-rX-PUi" userLabel="Image + Details + Send">
-                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="250"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="235"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="355" placeholderIntrinsicHeight="128" image="bali" translatesAutoresizingMaskIntoConstraints="NO" id="0cH-Ed-cYY">
                                                                     <rect key="frame" x="0.0" y="0.0" width="355" height="128"/>
@@ -51,7 +51,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="XXi-Vo-5jw" userLabel="Details + Send">
-                                                                    <rect key="frame" x="0.0" y="140" width="355" height="110"/>
+                                                                    <rect key="frame" x="0.0" y="140" width="355" height="95"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QV4-Jd-hGB" userLabel="Details">
                                                                             <rect key="frame" x="10" y="0.0" width="335" height="63"/>
@@ -95,7 +95,7 @@
                                                                             </subviews>
                                                                         </stackView>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0i-gb-Gmm">
-                                                                            <rect key="frame" x="10" y="75" width="335" height="35"/>
+                                                                            <rect key="frame" x="10" y="75" width="335" height="20"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                                             <state key="normal" title="Share"/>
                                                                             <connections>
@@ -122,7 +122,7 @@
                                                         </stackView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="rUE-rX-PUi" secondAttribute="bottom" id="NLW-MS-VFR"/>
+                                                        <constraint firstAttribute="bottom" secondItem="rUE-rX-PUi" secondAttribute="bottom" constant="15" id="NLW-MS-VFR"/>
                                                         <constraint firstAttribute="trailing" secondItem="rUE-rX-PUi" secondAttribute="trailing" id="g1R-ZG-nc8"/>
                                                         <constraint firstItem="rUE-rX-PUi" firstAttribute="top" secondItem="KVt-wr-keo" secondAttribute="top" id="kZE-0J-M0f"/>
                                                         <constraint firstItem="rUE-rX-PUi" firstAttribute="leading" secondItem="KVt-wr-keo" secondAttribute="leading" id="vPa-Ng-sbo"/>
