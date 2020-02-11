@@ -43,9 +43,11 @@ class ShareViewController: UIViewController {
   }
 
   func addBorder(_ button: UIButton) {
+    let resolvedColor = UIColor.label.resolvedColor(with: traitCollection)
+
     button.layer.borderWidth = 1.0
     button.layer.cornerRadius = 8.0
-    button.layer.borderColor = UIColor.black.cgColor
+    button.layer.borderColor = resolvedColor.cgColor
   }
 }
 

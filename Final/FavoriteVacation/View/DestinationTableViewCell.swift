@@ -53,8 +53,17 @@ class DestinationTableViewCell: UITableViewCell {
       }
       
       if let isFavorite = destinationCellViewModel?.isFavorite {
-        isFavoriteImageView.image = UIImage(named: isFavorite ? "heart" : "filledHeart")
+        isFavoriteImageView.image = UIImage(systemName: isFavorite ? "heart" : "heart.fill")
       }
     }
+  }
+
+  override func awakeFromNib() {
+    super.awakeFromNib()
+
+    let resolvedColor = UIColor.label.resolvedColor(with: traitCollection)
+    sendButton.layer.borderWidth = 1.0
+    sendButton.layer.cornerRadius = 8.0
+    sendButton.layer.borderColor = resolvedColor.cgColor
   }
 }
