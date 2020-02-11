@@ -38,11 +38,11 @@ class ShareViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    addBorder(sendButton)
-    addBorder(cancelButton)
+    addBorder(to: sendButton)
+    addBorder(to: cancelButton)
   }
 
-  func addBorder(_ button: UIButton) {
+  func addBorder(to button: UIButton) {
     button.layer.borderWidth = 1.0
     button.layer.cornerRadius = 8.0
     button.layer.borderColor = UIColor.black.cgColor
