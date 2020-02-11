@@ -46,7 +46,6 @@ class DestinationViewController: UIViewController {
     super.viewDidLoad()
     
     configureTableView()
-    configureSegmentController()
     initializeViewModel()
   }
   
