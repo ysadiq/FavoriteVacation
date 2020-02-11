@@ -197,7 +197,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="dVV-9f-Dxe"/>
                                         </constraints>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
                                     </textField>
@@ -234,6 +234,7 @@
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="ZYT-96-H9f" id="5tO-Xs-MEc"/>
+                        <outlet property="emailTextField" destination="VzI-0C-ORO" id="f7b-63-mvY"/>
                         <outlet property="sendButton" destination="FaC-KN-rU6" id="747-tU-Jh4"/>
                     </connections>
                 </viewController>
