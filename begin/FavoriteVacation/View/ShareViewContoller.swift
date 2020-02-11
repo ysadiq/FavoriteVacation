@@ -45,21 +45,21 @@ class ShareViewController: UIViewController {
   
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
-
+    
     configureEmailTextField()
     configureButtons()
   }
-
+  
   func configureEmailTextField() {
     let color = UIColor.lightGray
-
+    
     emailTextField.layer.borderWidth = 1.0
     emailTextField.layer.cornerRadius = 4.0
     emailTextField.layer.borderColor = color.cgColor
     emailTextField.attributedPlaceholder = NSAttributedString(string: "Enter your partner's email",
                                                               attributes: [NSAttributedString.Key.foregroundColor: color])
   }
-
+  
   func configureButtons() {
     let cgColor = UIColor.black.cgColor
     sendButton.layer.borderColor = cgColor
