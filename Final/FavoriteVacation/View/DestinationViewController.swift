@@ -45,17 +45,17 @@ class DestinationViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    initView()
-    initViewModel()
+    configureTableView()
+    configureSegmentController()
+    initializeViewModel()
   }
   
-  func initView() {
-    // config tableView
+  func configureTableView() {
     tableView.estimatedRowHeight = 250
     tableView.rowHeight = UITableView.automaticDimension
   }
   
-  func initViewModel() {
+  func initializeViewModel() {
     viewModel.updateLoadingStatus = { [weak self] () in
       guard let self = self else {
         return
