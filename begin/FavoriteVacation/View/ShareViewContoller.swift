@@ -61,7 +61,7 @@ class ShareViewController: UIViewController {
   }
 
   func configureButtons() {
-    let cgColor = UIColor.lightGray.cgColor
+    let cgColor = UIColor.black.cgColor
     sendButton.layer.borderColor = cgColor
     cancelButton.layer.borderColor = cgColor
   }
