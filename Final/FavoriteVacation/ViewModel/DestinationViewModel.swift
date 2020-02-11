@@ -92,7 +92,7 @@ class DestinationViewModel {
   private func processFetchedDestination(destinations: [Destination]) {
     var privateViewModels = [DestinationCellViewModel]()
     var publicViewModels = [DestinationCellViewModel]()
-
+    
     for destination in destinations {
       if let isPrivate = destination.isPrivate, isPrivate {
         privateViewModels.append(createCellViewModel(destination: destination))
@@ -100,7 +100,7 @@ class DestinationViewModel {
         publicViewModels.append(createCellViewModel(destination: destination))
       }
     }
-
+    
     publicCellViewModels = publicViewModels
     privateCellViewModels = privateViewModels
   }

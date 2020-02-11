@@ -47,7 +47,7 @@ class APIService: APIServiceProtocol {
       let decoder = JSONDecoder()
       decoder.dateDecodingStrategy = .iso8601
       let destinations = try! decoder.decode([Destination].self, from: data)
-//      sleep(2)
+      sleep(1)
       onCompletion(destinations, nil)
     }
   }

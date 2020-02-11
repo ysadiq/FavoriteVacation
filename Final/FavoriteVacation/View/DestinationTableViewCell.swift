@@ -44,7 +44,7 @@ class DestinationTableViewCell: UITableViewCell {
       titleLabel.text = destinationCellViewModel?.titleText
       locationLabel.text = destinationCellViewModel?.locationText
       locationLabel.textColor = .lightAndDarkLocationColor
-
+      
       if let imageName = destinationCellViewModel?.imageName {
         mainImageView?.image = UIImage(named: imageName)
       }
@@ -58,17 +58,17 @@ class DestinationTableViewCell: UITableViewCell {
       }
     }
   }
-
+  
   override func awakeFromNib() {
     super.awakeFromNib()
-
+    
     sendButton.layer.borderWidth = 1.0
     sendButton.layer.cornerRadius = 8.0
   }
-
+  
   override func layoutSubviews() {
     super.layoutSubviews()
-
+    
     let resolvedColor = UIColor.label.resolvedColor(with: traitCollection)
     sendButton.layer.borderColor = resolvedColor.cgColor
   }
