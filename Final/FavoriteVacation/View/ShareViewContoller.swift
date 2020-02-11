@@ -38,11 +38,11 @@ class ShareViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    addBorder(sendButton)
-    addBorder(cancelButton)
+    addBorder(to: sendButton)
+    addBorder(to: cancelButton)
   }
 
-  func addBorder(_ button: UIButton) {
+  func addBorder(to button: UIButton) {
     let resolvedColor = UIColor.label.resolvedColor(with: traitCollection)
 
     button.layer.borderWidth = 1.0
