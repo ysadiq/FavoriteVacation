@@ -20,6 +20,7 @@
 		99701F0A23F05A8F003436A9 /* DestinationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99701F0923F05A8F003436A9 /* DestinationCellViewModel.swift */; };
 		99701F0C23F0A599003436A9 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99701F0B23F0A599003436A9 /* State.swift */; };
 		99701F0E23F209F9003436A9 /* ShareViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99701F0D23F209F8003436A9 /* ShareViewContoller.swift */; };
+		99701F1023F2DBC5003436A9 /* UIColor+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99701F0F23F2DBC5003436A9 /* UIColor+Dynamic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		99701F0923F05A8F003436A9 /* DestinationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCellViewModel.swift; sourceTree = "<group>"; };
 		99701F0B23F0A599003436A9 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		99701F0D23F209F8003436A9 /* ShareViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewContoller.swift; sourceTree = "<group>"; };
+		99701F0F23F2DBC5003436A9 /* UIColor+Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Dynamic.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				185CB1FB23C78CE6009F7571 /* AppDelegate.swift */,
 				185CB20423C78CE8009F7571 /* Assets.xcassets */,
 				180DC61423C78D9800486B1A /* LaunchScreen.storyboard */,
+				99701F0F23F2DBC5003436A9 /* UIColor+Dynamic.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				99701EFD23F051F9003436A9 /* DestinationTableViewCell.swift in Sources */,
 				99701F0323F055F8003436A9 /* DestinationViewModel.swift in Sources */,
 				99701F0123F054BC003436A9 /* APIService.swift in Sources */,
+				99701F1023F2DBC5003436A9 /* UIColor+Dynamic.swift in Sources */,
 				99701F0E23F209F9003436A9 /* ShareViewContoller.swift in Sources */,
 				99701EF923EF6C3D003436A9 /* DestinationViewController.swift in Sources */,
 				185CB1FC23C78CE6009F7571 /* AppDelegate.swift in Sources */,

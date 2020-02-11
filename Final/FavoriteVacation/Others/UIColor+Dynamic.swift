@@ -32,39 +32,14 @@
 
 import UIKit
 
-class DestinationTableViewCell: UITableViewCell {
-  @IBOutlet weak var mainImageView: UIImageView!
-  @IBOutlet weak var priceLabel: UILabel!
-  @IBOutlet weak var locationLabel: UILabel!
-  @IBOutlet weak var titleLabel: UILabel!
-  @IBOutlet weak var sendButton: UIButton!
-  @IBOutlet weak var isFavoriteImageView: UIImageView!
-  var destinationCellViewModel: DestinationCellViewModel? {
-    didSet {
-      titleLabel.text = destinationCellViewModel?.titleText
-      locationLabel.text = destinationCellViewModel?.locationText
-      locationLabel.textColor = .lightAndDarkLocationColor
-
-      if let imageName = destinationCellViewModel?.imageName {
-        mainImageView?.image = UIImage(named: imageName)
-      }
-      
-      if let price = destinationCellViewModel?.price {
-        priceLabel.text = "$\(price)"
-      }
-      
-      if let isFavorite = destinationCellViewModel?.isFavorite {
-        isFavoriteImageView.image = UIImage(systemName: isFavorite ? "heart" : "heart.fill")
+extension UIColor {
+  public static var lightAndDarkLocationColor: UIColor = {
+    return UIColor { (trait) -> UIColor in
+      if trait.userInterfaceStyle == .dark {
+        return .red
+      } else {
+        return .lightGray
       }
     }
-  }
-
-  override func awakeFromNib() {
-    super.awakeFromNib()
-
-    let resolvedColor = UIColor.label.resolvedColor(with: traitCollection)
-    sendButton.layer.borderWidth = 1.0
-    sendButton.layer.cornerRadius = 8.0
-    sendButton.layer.borderColor = resolvedColor.cgColor
-  }
+  }()
 }
