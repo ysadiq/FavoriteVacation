@@ -35,17 +35,23 @@ import UIKit
 class ShareViewController: UIViewController {
   @IBOutlet weak var sendButton: UIButton!
   @IBOutlet weak var cancelButton: UIButton!
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     addBorder(to: sendButton)
     addBorder(to: cancelButton)
   }
-
+  
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    
+    sendButton.layer.borderColor = UIColor.black.cgColor
+    cancelButton.layer.borderColor = UIColor.black.cgColor
+  }
+  
   func addBorder(to button: UIButton) {
     button.layer.borderWidth = 1.0
     button.layer.cornerRadius = 8.0
-    button.layer.borderColor = UIColor.black.cgColor
   }
 }
 
@@ -53,7 +59,7 @@ extension ShareViewController {
   @IBAction func sendButtonPressed(_ sender: Any) {
     dismiss(animated: true, completion: nil)
   }
-
+  
   @IBAction func cancelButtonPressed(_ sender: Any) {
     dismiss(animated: true, completion: nil)
   }

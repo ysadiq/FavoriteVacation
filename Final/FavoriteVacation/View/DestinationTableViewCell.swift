@@ -62,9 +62,14 @@ class DestinationTableViewCell: UITableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
 
-    let resolvedColor = UIColor.label.resolvedColor(with: traitCollection)
     sendButton.layer.borderWidth = 1.0
     sendButton.layer.cornerRadius = 8.0
+  }
+
+  override func layoutSubviews() {
+    super.layoutSubviews()
+
+    let resolvedColor = UIColor.label.resolvedColor(with: traitCollection)
     sendButton.layer.borderColor = resolvedColor.cgColor
   }
 }
