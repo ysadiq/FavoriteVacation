@@ -83,7 +83,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6d0-70-3dv">
-                                <rect key="frame" x="10" y="74" width="355" height="32"/>
+                                <rect key="frame" x="10" y="59" width="355" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
                                     <segment title="Public Spots"/>
@@ -95,7 +95,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tri-S0-Pdb">
-                                <rect key="frame" x="10" y="129" width="355" height="538"/>
+                                <rect key="frame" x="10" y="114" width="355" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="destinationCell" rowHeight="298" id="4Tt-al-lIk" customClass="DestinationTableViewCell" customModule="FavoriteVacation" customModuleProvider="target">
@@ -197,7 +197,7 @@
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTm-eT-2da">
-                                <rect key="frame" x="0.0" y="15" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <items>
                                     <navigationItem title="Favorite Vacation" id="ugu-4I-Av8"/>
@@ -206,7 +206,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="fTm-eT-2da" firstAttribute="top" secondItem="vue-On-LDh" secondAttribute="top" constant="15" id="BEJ-f4-pbU"/>
+                            <constraint firstItem="fTm-eT-2da" firstAttribute="top" secondItem="vue-On-LDh" secondAttribute="top" id="BEJ-f4-pbU"/>
                             <constraint firstItem="tri-S0-Pdb" firstAttribute="bottom" secondItem="vue-On-LDh" secondAttribute="bottom" id="L8y-Wx-YVa"/>
                             <constraint firstItem="fTm-eT-2da" firstAttribute="leading" secondItem="vue-On-LDh" secondAttribute="leading" id="Rte-PT-K2G"/>
                             <constraint firstItem="6d0-70-3dv" firstAttribute="leading" secondItem="vue-On-LDh" secondAttribute="leading" constant="10" id="TYk-Ah-lT8"/>

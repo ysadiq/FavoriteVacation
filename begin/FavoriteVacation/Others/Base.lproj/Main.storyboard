@@ -84,7 +84,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="k9V-gD-nRP">
-                                <rect key="frame" x="10" y="74" width="355" height="32"/>
+                                <rect key="frame" x="10" y="59" width="355" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
                                     <segment title="Public Spots"/>
@@ -96,7 +96,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LFr-0V-2JN">
-                                <rect key="frame" x="10" y="129" width="355" height="538"/>
+                                <rect key="frame" x="10" y="114" width="355" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="destinationCell" rowHeight="298" id="6Cv-BC-F1v" customClass="DestinationTableViewCell" customModule="FavoriteVacation" customModuleProvider="target">
@@ -204,7 +204,7 @@
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXG-uj-8Sw">
-                                <rect key="frame" x="0.0" y="15" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -216,7 +216,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="eXG-uj-8Sw" firstAttribute="top" secondItem="qC1-ah-Cas" secondAttribute="top" constant="15" id="1PJ-7x-2Vk"/>
+                            <constraint firstItem="eXG-uj-8Sw" firstAttribute="top" secondItem="qC1-ah-Cas" secondAttribute="top" id="1PJ-7x-2Vk"/>
                             <constraint firstItem="LFr-0V-2JN" firstAttribute="top" secondItem="k9V-gD-nRP" secondAttribute="bottom" constant="24" id="H6i-am-eAr"/>
                             <constraint firstItem="qC1-ah-Cas" firstAttribute="trailing" secondItem="k9V-gD-nRP" secondAttribute="trailing" constant="10" id="L18-0L-4La"/>
                             <constraint firstItem="LFr-0V-2JN" firstAttribute="bottom" secondItem="qC1-ah-Cas" secondAttribute="bottom" id="PLJ-5G-hyV"/>
