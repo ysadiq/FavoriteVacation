@@ -54,6 +54,7 @@ class DestinationTableViewCell: UITableViewCell {
       
       if let isFavorite = destinationCellViewModel?.isFavorite {
         isFavoriteImageView.image = UIImage(named: isFavorite ? "heart" : "filledHeart")
+        isFavoriteImageView.tintColor = .darkGray
       }
     }
   }
