@@ -284,6 +284,11 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="160" id="YUs-lD-mPY"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vg7-NF-Tu2">
                                                             <rect key="frame" x="0.0" y="170" width="355" height="67"/>
