@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1jY-vT-n8J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vRH-sm-ZA0">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
@@ -269,7 +269,7 @@
                                 <rect key="frame" x="10" y="125" width="355" height="542"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="298" id="6Cv-BC-F1v">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="destinationCell" rowHeight="298" id="6Cv-BC-F1v" customClass="DestinationTableViewCell" customModule="FavoriteVacation" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="355" height="298"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Cv-BC-F1v" id="RPn-fg-zD4">
@@ -281,15 +281,18 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="354" placeholderIntrinsicHeight="160" image="bali" translatesAutoresizingMaskIntoConstraints="NO" id="W9C-cF-2Wj">
                                                             <rect key="frame" x="0.5" y="0.0" width="354" height="160"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="160" id="YUs-lD-mPY"/>
+                                                            </constraints>
                                                         </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="167" translatesAutoresizingMaskIntoConstraints="NO" id="vg7-NF-Tu2">
-                                                            <rect key="frame" x="13" y="170" width="329.5" height="67"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vg7-NF-Tu2">
+                                                            <rect key="frame" x="0.0" y="170" width="355" height="67"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="gi7-pc-cv8">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="92.5" height="67"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="gi7-pc-cv8">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="285" height="67"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bali" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBX-aN-Qch">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="33.5"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Bali" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBX-aN-Qch">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="40.5"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -303,7 +306,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="hFZ-sz-z98">
-                                                                    <rect key="frame" x="259.5" y="0.0" width="70" height="67"/>
+                                                                    <rect key="frame" x="285" y="0.0" width="70" height="67"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2,500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwj-HR-DJL">
                                                                             <rect key="frame" x="0.0" y="0.0" width="70" height="24"/>
@@ -313,6 +316,10 @@
                                                                         </label>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s8H-De-Hin">
                                                                             <rect key="frame" x="0.0" y="35" width="70" height="32"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="32" id="1V5-7S-EFb"/>
+                                                                                <constraint firstAttribute="width" constant="70" id="6Ye-Tm-qGA"/>
+                                                                            </constraints>
                                                                         </imageView>
                                                                     </subviews>
                                                                 </stackView>
@@ -326,6 +333,8 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="eq6-2C-5Ys" secondAttribute="trailing" id="8Pe-LL-KMR"/>
+                                                        <constraint firstItem="vg7-NF-Tu2" firstAttribute="leading" secondItem="GV0-1h-g4L" secondAttribute="leading" id="M7I-CP-UGo"/>
+                                                        <constraint firstAttribute="trailing" secondItem="vg7-NF-Tu2" secondAttribute="trailing" id="cNr-yY-B5K"/>
                                                         <constraint firstItem="eq6-2C-5Ys" firstAttribute="leading" secondItem="GV0-1h-g4L" secondAttribute="leading" id="fDN-bG-znu"/>
                                                     </constraints>
                                                 </stackView>
@@ -337,6 +346,14 @@
                                                 <constraint firstItem="GV0-1h-g4L" firstAttribute="top" secondItem="RPn-fg-zD4" secondAttribute="top" id="ysb-bj-sbn"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="isFavoriteImageView" destination="s8H-De-Hin" id="EtD-1R-ABx"/>
+                                            <outlet property="locationLabel" destination="8Xx-uT-oLa" id="JYu-se-Bsk"/>
+                                            <outlet property="mainImageView" destination="W9C-cF-2Wj" id="Iha-2h-Zux"/>
+                                            <outlet property="priceLabel" destination="Iwj-HR-DJL" id="9M1-Qv-hXP"/>
+                                            <outlet property="sendButton" destination="eq6-2C-5Ys" id="qjp-v9-5tU"/>
+                                            <outlet property="titleLabel" destination="TBX-aN-Qch" id="oTu-rn-cqB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
