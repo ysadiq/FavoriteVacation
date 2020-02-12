@@ -84,7 +84,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="k9V-gD-nRP">
-                                <rect key="frame" x="10" y="70" width="355" height="32"/>
+                                <rect key="frame" x="10" y="74" width="355" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
                                     <segment title="Public Spots"/>
@@ -96,7 +96,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LFr-0V-2JN">
-                                <rect key="frame" x="10" y="125" width="355" height="542"/>
+                                <rect key="frame" x="10" y="129" width="355" height="538"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="destinationCell" rowHeight="298" id="6Cv-BC-F1v" customClass="DestinationTableViewCell" customModule="FavoriteVacation" customModuleProvider="target">
@@ -203,9 +203,8 @@
                                     <outlet property="dataSource" destination="vRH-sm-ZA0" id="gHZ-Oj-NHv"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eXG-uj-8Sw">
-                                <rect key="frame" x="0.0" y="16" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXG-uj-8Sw">
+                                <rect key="frame" x="0.0" y="15" width="375" height="44"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -217,11 +216,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="eXG-uj-8Sw" firstAttribute="top" secondItem="qC1-ah-Cas" secondAttribute="top" constant="15" id="1PJ-7x-2Vk"/>
                             <constraint firstItem="LFr-0V-2JN" firstAttribute="top" secondItem="k9V-gD-nRP" secondAttribute="bottom" constant="24" id="H6i-am-eAr"/>
                             <constraint firstItem="qC1-ah-Cas" firstAttribute="trailing" secondItem="k9V-gD-nRP" secondAttribute="trailing" constant="10" id="L18-0L-4La"/>
                             <constraint firstItem="LFr-0V-2JN" firstAttribute="bottom" secondItem="qC1-ah-Cas" secondAttribute="bottom" id="PLJ-5G-hyV"/>
                             <constraint firstItem="qC1-ah-Cas" firstAttribute="trailing" secondItem="LFr-0V-2JN" secondAttribute="trailing" constant="10" id="UkZ-7I-AfD"/>
-                            <constraint firstItem="k9V-gD-nRP" firstAttribute="top" secondItem="91g-bT-elj" secondAttribute="top" constant="70" id="apv-Kg-2AS"/>
+                            <constraint firstItem="eXG-uj-8Sw" firstAttribute="trailing" secondItem="qC1-ah-Cas" secondAttribute="trailing" id="WFT-Os-1ha"/>
+                            <constraint firstItem="k9V-gD-nRP" firstAttribute="top" secondItem="eXG-uj-8Sw" secondAttribute="bottom" constant="15" id="apv-Kg-2AS"/>
+                            <constraint firstItem="eXG-uj-8Sw" firstAttribute="leading" secondItem="qC1-ah-Cas" secondAttribute="leading" id="az4-Gl-Giu"/>
                             <constraint firstItem="k9V-gD-nRP" firstAttribute="leading" secondItem="qC1-ah-Cas" secondAttribute="leading" constant="10" id="dfz-iE-ntN"/>
                             <constraint firstItem="LFr-0V-2JN" firstAttribute="leading" secondItem="qC1-ah-Cas" secondAttribute="leading" constant="10" id="l3f-W9-jYn"/>
                         </constraints>
