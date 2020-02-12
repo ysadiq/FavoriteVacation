@@ -34,11 +34,13 @@ import Foundation
 
 class DestinationViewModel {
   let apiService: APIServiceProtocol?
-  private var destinations = [Destination]()
-  private var publicCellViewModels: [DestinationCellViewModel]?
-  private var privateCellViewModels: [DestinationCellViewModel]?
+
+  var publicCellViewModels: [DestinationCellViewModel]?
+  var privateCellViewModels: [DestinationCellViewModel]?
+
   var reloadTableViewClosure: (()->())?
   var updateLoadingStatus: (()->())?
+
   var state: State = .empty {
     didSet {
       updateLoadingStatus?()
@@ -89,7 +91,7 @@ class DestinationViewModel {
     return isPrivate ? privateCellViewModels?.count : publicCellViewModels?.count
   }
   
-  private func processFetchedDestination(destinations: [Destination]) {
+  func processFetchedDestination(destinations: [Destination]) {
     var privateViewModels = [DestinationCellViewModel]()
     var publicViewModels = [DestinationCellViewModel]()
     

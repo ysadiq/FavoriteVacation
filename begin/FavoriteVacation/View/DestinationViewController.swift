@@ -35,9 +35,11 @@ import UIKit
 class DestinationViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var segmentedControl: UISegmentedControl!
+
   var isPrivateSegment: Bool {
     segmentedControl.selectedSegmentIndex == 1
   }
+
   lazy var viewModel: DestinationViewModel = {
     return DestinationViewModel()
   }()
@@ -46,22 +48,12 @@ class DestinationViewController: UIViewController {
     super.viewDidLoad()
     
     configureTableView()
-    configureSegmentController()
     initializeViewModel()
-  }
-  
-  override var preferredStatusBarStyle: UIStatusBarStyle {
-    return .darkContent
   }
   
   func configureTableView() {
     tableView.estimatedRowHeight = 250
     tableView.rowHeight = UITableView.automaticDimension
-  }
-  
-  func configureSegmentController() {
-    segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
-    segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
   }
   
   func initializeViewModel() {
@@ -74,19 +66,23 @@ class DestinationViewController: UIViewController {
         guard let self = self else {
           return
         }
+
         switch self.viewModel.state {
         case .empty, .error:
           self.stopLoading()
+
           UIView.animate(withDuration: 0.2, animations: {
             self.tableView.alpha = 0.0
           })
         case .loading:
           self.startLoading()
+
           UIView.animate(withDuration: 0.2, animations: {
             self.tableView.alpha = 0.0
           })
         case .populated:
           self.stopLoading()
+
           UIView.animate(withDuration: 0.2, animations: {
             self.tableView.alpha = 1.0
           })
@@ -112,8 +108,8 @@ class DestinationViewController: UIViewController {
     loadingIndicator.hidesWhenStopped = true
     loadingIndicator.style = .medium
     loadingIndicator.startAnimating()
+
     alert.view.addSubview(loadingIndicator)
-    
     present(alert, animated: true, completion: nil)
   }
   
@@ -128,6 +124,7 @@ extension DestinationViewController: UITableViewDataSource {
     guard let numberOfCells = viewModel.numberOfCells(isPrivate: isPrivateSegment) else {
       return 0
     }
+    
     return numberOfCells
   }
   

@@ -43,11 +43,15 @@ class APIService: APIServiceProtocol {
         onCompletion(nil, nil)
         return
       }
+
       let data = try! Data(contentsOf: URL(fileURLWithPath: path))
       let decoder = JSONDecoder()
       decoder.dateDecodingStrategy = .iso8601
       let destinations = try! decoder.decode([Destination].self, from: data)
+
+      // Simulate a waiting for fetching
       sleep(1)
+      
       onCompletion(destinations, nil)
     }
   }

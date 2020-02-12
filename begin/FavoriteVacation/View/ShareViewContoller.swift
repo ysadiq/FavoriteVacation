@@ -39,6 +39,7 @@ class ShareViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+
     addBorder(to: sendButton)
     addBorder(to: cancelButton)
   }
@@ -62,6 +63,7 @@ class ShareViewController: UIViewController {
   
   func configureButtons() {
     let cgColor = UIColor.black.cgColor
+    
     sendButton.layer.borderColor = cgColor
     cancelButton.layer.borderColor = cgColor
   }
@@ -72,6 +74,7 @@ class ShareViewController: UIViewController {
   }
 }
 
+// MARK: - User Interface Actions
 extension ShareViewController {
   @IBAction func sendButtonPressed(_ sender: Any) {
     dismiss(animated: true, completion: nil)
