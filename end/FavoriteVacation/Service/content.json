@@ -1,58 +1,65 @@
 [
   {
-    "name": "Bali",
-    "location": "Indonesia",
-    "price": 2500,
-    "imageName": "bali",
-    "isPrivate": true,
-    "isFavorite": true
-  },
-  {
-    "name": "British Virgin Islands",
-    "location": "Caribbean",
-    "price": 3500,
-    "imageName": "virgin",
-    "isPrivate": true,
-    "isFavorite": false
-  },
-  {
-    "name": "St. Lucia",
-    "location": "Caribbean",
-    "price": 1500,
-    "imageName": "lucia",
-    "isPrivate": true,
-    "isFavorite": false
-  },
-  {
-    "name": "Cayman Islands",
-    "location": "Caribbean",
-    "price": 3900,
-    "imageName": "cayman",
-    "isPrivate": true,
-    "isFavorite": true
-  },
-  {
-    "name": "Barbados",
-    "location": "Caribbean",
-    "price": 1900,
-    "imageName": "barbados",
-    "isPrivate": false,
-    "isFavorite": false
-  },
-  {
-    "name": "Grenada",
-    "location": "Caribbean",
+    "name": "Канифуши",
+    "location": "Maldives",
     "price": 8500,
-    "imageName": "grenada",
+    "imageName": "maldives",
     "isPrivate": false,
-    "isFavorite": true
+    "isFavorite": false,
+    "credit": "Jcob Nasyr on Unsplash"
   },
   {
-    "name": "Punta Cana",
-    "location": "Dominican Republic",
+    "name": "Naladhu",
+    "location": "Maldives",
     "price": 2500,
-    "imageName": "punta",
+    "imageName": "naladhu",
     "isPrivate": false,
-    "isFavorite": true
+    "isFavorite": true,
+    "credit": "Jcob Nasyr on Unsplash"
+  },
+  {
+    "name": "Gulf of Thailand",
+    "location": "Thailand",
+    "price": 2500,
+    "imageName": "thailand",
+    "isPrivate": true,
+    "isFavorite": true,
+    "credit": "Tom Winckels on Unsplash"
+  },
+  {
+    "name": "Gold Creek Pond Trail",
+    "location": "United States",
+    "price": 3500,
+    "imageName": "creek",
+    "isPrivate": true,
+    "isFavorite": false,
+    "credit": "Dave on Unsplash"
+  },
+  {
+    "name": "Ao Nang, Krabi",
+    "location": "Thailand",
+    "price": 1500,
+    "imageName": "krabi",
+    "isPrivate": true,
+    "isFavorite": false,
+    "credit": "Denys Nevozhai on Unsplash"
+  },
+  {
+    "name": "Özdere Cumhuriyet Mahallesi",
+    "location": "Turkey",
+    "price": 3900,
+    "imageName": "mahallesi",
+    "isPrivate": true,
+    "isFavorite": true,
+    "credit": "Martin Widenka on Unsplash"
+  },
+  {
+    "name": "Skellig",
+    "location": "Ireland",
+    "price": 1900,
+    "imageName": "skellig",
+    "isPrivate": false,
+    "isFavorite": false,
+    "credit": "Micheal on Unsplash"
   }
 ]
