@@ -214,7 +214,7 @@
                                     <outlet property="dataSource" destination="ZXF-ps-sah" id="8ap-rG-2v5"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTm-eT-2da">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTm-eT-2da">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <items>
