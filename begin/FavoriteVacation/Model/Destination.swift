@@ -37,6 +37,7 @@ struct Destinations: Codable {
 struct Destination: Codable {
   let name: String?
   let location: String?
+  let credit: String?
   let price: Int?
   let imageName: String?
   let isPrivate: Bool?

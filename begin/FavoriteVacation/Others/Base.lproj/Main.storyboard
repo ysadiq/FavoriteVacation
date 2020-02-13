@@ -207,6 +207,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="creditLabel" destination="2vW-HP-YAo" id="sVH-at-zIt"/>
                                             <outlet property="isFavoriteImageView" destination="s8H-De-Hin" id="EtD-1R-ABx"/>
                                             <outlet property="locationLabel" destination="8Xx-uT-oLa" id="JYu-se-Bsk"/>
                                             <outlet property="mainImageView" destination="W9C-cF-2Wj" id="Iha-2h-Zux"/>

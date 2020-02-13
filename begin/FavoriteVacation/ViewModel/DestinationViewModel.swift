@@ -84,7 +84,8 @@ class DestinationViewModel {
                                     locationText: destination.location,
                                     imageName: destination.imageName,
                                     price: destination.price,
-                                    isFavorite: destination.isFavorite)
+                                    isFavorite: destination.isFavorite,
+                                    credit: destination.credit)
   }
   
   func numberOfCells(isPrivate: Bool) -> Int? {

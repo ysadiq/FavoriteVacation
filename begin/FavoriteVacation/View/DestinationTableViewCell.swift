@@ -37,6 +37,7 @@ class DestinationTableViewCell: UITableViewCell {
   @IBOutlet weak var priceLabel: UILabel!
   @IBOutlet weak var locationLabel: UILabel!
   @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var creditLabel: UILabel!
   @IBOutlet weak var sendButton: UIButton!
   @IBOutlet weak var isFavoriteImageView: UIImageView!
   
@@ -55,7 +56,10 @@ class DestinationTableViewCell: UITableViewCell {
       
       if let isFavorite = destinationCellViewModel?.isFavorite {
         isFavoriteImageView.image = UIImage(named: isFavorite ? "filledHeart" : "heart")
-        isFavoriteImageView.tintColor = .darkGray
+      }
+      
+      if let credit = destinationCellViewModel?.credit {
+        creditLabel.text = "Photo by \(credit)"
       }
     }
   }
