@@ -108,8 +108,8 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hG7-W6-JJl" userLabel="Image + Details + Send">
                                                     <rect key="frame" x="0.0" y="0.0" width="355" height="286"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="tbf-5N-KWM" userLabel="Image + Credit">
-                                                            <rect key="frame" x="0.5" y="0.0" width="354" height="152"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="tbf-5N-KWM" userLabel="Image + Credit">
+                                                            <rect key="frame" x="0.5" y="0.0" width="354" height="157"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="354" placeholderIntrinsicHeight="160" image="krabi" translatesAutoresizingMaskIntoConstraints="NO" id="Tbu-JW-XAe">
                                                                     <rect key="frame" x="0.0" y="0.0" width="354" height="160"/>
@@ -123,7 +123,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo by Tom Winckels on Unsplash" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUg-Og-etb">
-                                                                    <rect key="frame" x="10" y="140" width="334" height="12"/>
+                                                                    <rect key="frame" x="10" y="145" width="334" height="12"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="10"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -134,10 +134,10 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZ9-ke-zBa" userLabel="Details">
-                                                            <rect key="frame" x="0.0" y="162" width="355" height="65.5"/>
+                                                            <rect key="frame" x="10" y="167" width="335" height="65.5"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="iW0-5p-7Ro" userLabel="Title + Location">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="285" height="65.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="265" height="65.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Bali" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1j7-9X-GKq">
                                                                             <rect key="frame" x="0.0" y="0.0" width="44" height="33.5"/>
@@ -153,7 +153,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9pd-2Z-6a1" userLabel="Price + Favorite">
-                                                                    <rect key="frame" x="285" y="0.0" width="70" height="65.5"/>
+                                                                    <rect key="frame" x="265" y="0.0" width="70" height="65.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2,500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAk-UQ-vhD">
                                                                             <rect key="frame" x="0.0" y="0.0" width="70" height="33.5"/>
@@ -176,7 +176,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdX-KT-B2H">
-                                                            <rect key="frame" x="0.0" y="237.5" width="355" height="48.5"/>
+                                                            <rect key="frame" x="0.0" y="242.5" width="355" height="43.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                             <state key="normal" title="Share"/>
                                                             <connections>
@@ -187,8 +187,8 @@
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="WdX-KT-B2H" secondAttribute="trailing" id="2Xu-8u-7df"/>
                                                         <constraint firstItem="WdX-KT-B2H" firstAttribute="leading" secondItem="hG7-W6-JJl" secondAttribute="leading" id="Heh-bo-CPg"/>
-                                                        <constraint firstAttribute="trailing" secondItem="CZ9-ke-zBa" secondAttribute="trailing" id="e78-aJ-mwE"/>
-                                                        <constraint firstItem="CZ9-ke-zBa" firstAttribute="leading" secondItem="hG7-W6-JJl" secondAttribute="leading" id="off-E9-oqe"/>
+                                                        <constraint firstAttribute="trailing" secondItem="CZ9-ke-zBa" secondAttribute="trailing" constant="10" id="e78-aJ-mwE"/>
+                                                        <constraint firstItem="CZ9-ke-zBa" firstAttribute="leading" secondItem="hG7-W6-JJl" secondAttribute="leading" constant="10" id="off-E9-oqe"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
