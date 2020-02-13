@@ -112,7 +112,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="4HH-Cq-8kT" userLabel="Image + Credit">
                                                             <rect key="frame" x="0.5" y="0.0" width="354" height="152"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="354" placeholderIntrinsicHeight="160" image="bali" translatesAutoresizingMaskIntoConstraints="NO" id="W9C-cF-2Wj">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="354" placeholderIntrinsicHeight="160" image="krabi" translatesAutoresizingMaskIntoConstraints="NO" id="W9C-cF-2Wj">
                                                                     <rect key="frame" x="0.0" y="0.0" width="354" height="160"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="160" id="YUs-lD-mPY"/>
@@ -256,6 +256,6 @@
     </scenes>
     <resources>
         <image name="airplane" catalog="system" width="64" height="56"/>
-        <image name="bali" width="1024" height="597"/>
+        <image name="krabi" width="954" height="1272"/>
     </resources>
 </document>
