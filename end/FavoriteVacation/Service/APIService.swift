@@ -32,10 +32,6 @@
 
 import Foundation
 
-protocol APIServiceProtocol {
-  func fetchPopularDestinations(onCompletion: @escaping (_ destinations: [Destination]?, _ error: Error?)->())
-}
-
 class APIService: APIServiceProtocol {
   func fetchPopularDestinations(onCompletion: @escaping (_ destinations: [Destination]?, _ error: Error?)->()) {
     DispatchQueue.global().async {

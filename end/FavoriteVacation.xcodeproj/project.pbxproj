@@ -21,6 +21,7 @@
 		99701F0C23F0A599003436A9 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99701F0B23F0A599003436A9 /* State.swift */; };
 		99701F0E23F209F9003436A9 /* ShareViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99701F0D23F209F8003436A9 /* ShareViewContoller.swift */; };
 		99701F1023F2DBC5003436A9 /* UIColor+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99701F0F23F2DBC5003436A9 /* UIColor+Dynamic.swift */; };
+		99D503FF23F5E77900E2EC9A /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D503FE23F5E77900E2EC9A /* APIServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		99701F0B23F0A599003436A9 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		99701F0D23F209F8003436A9 /* ShareViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewContoller.swift; sourceTree = "<group>"; };
 		99701F0F23F2DBC5003436A9 /* UIColor+Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Dynamic.swift"; sourceTree = "<group>"; };
+		99D503FE23F5E77900E2EC9A /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				99701EFA23F0465A003436A9 /* content.json */,
 				99701F0023F054BC003436A9 /* APIService.swift */,
+				99D503FE23F5E77900E2EC9A /* APIServiceProtocol.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				99701F0E23F209F9003436A9 /* ShareViewContoller.swift in Sources */,
 				99701EF923EF6C3D003436A9 /* DestinationViewController.swift in Sources */,
 				185CB1FC23C78CE6009F7571 /* AppDelegate.swift in Sources */,
+				99D503FF23F5E77900E2EC9A /* APIServiceProtocol.swift in Sources */,
 				99701F0A23F05A8F003436A9 /* DestinationCellViewModel.swift in Sources */,
 				99701EFF23F05424003436A9 /* Destination.swift in Sources */,
 				99701F0C23F0A599003436A9 /* State.swift in Sources */,
