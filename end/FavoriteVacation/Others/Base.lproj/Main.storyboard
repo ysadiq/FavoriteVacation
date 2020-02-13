@@ -134,35 +134,35 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZ9-ke-zBa" userLabel="Details">
-                                                            <rect key="frame" x="0.0" y="162" width="355" height="67"/>
+                                                            <rect key="frame" x="0.0" y="162" width="355" height="65.5"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="iW0-5p-7Ro" userLabel="Title + Location">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="285" height="67"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="285" height="65.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Bali" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1j7-9X-GKq">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="40.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="33.5"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indonesia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srQ-wG-Hq3">
-                                                                            <rect key="frame" x="0.0" y="40.5" width="92.5" height="26.5"/>
+                                                                            <rect key="frame" x="0.0" y="33.5" width="92.5" height="32"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                                             <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="9pd-2Z-6a1" userLabel="Price + Favorite">
-                                                                    <rect key="frame" x="285" y="0.0" width="70" height="67"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9pd-2Z-6a1" userLabel="Price + Favorite">
+                                                                    <rect key="frame" x="285" y="0.0" width="70" height="65.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2,500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAk-UQ-vhD">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="24"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="33.5"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                                             <color key="textColor" name="LightAndDarkPriceColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ddu-6N-OHt">
-                                                                            <rect key="frame" x="0.0" y="35" width="70" height="32"/>
+                                                                            <rect key="frame" x="0.0" y="33.5" width="70" height="32"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="70" id="Ojs-U8-Xj4"/>
                                                                                 <constraint firstAttribute="height" constant="32" id="fXM-GY-F4j"/>
@@ -171,9 +171,12 @@
                                                                     </subviews>
                                                                 </stackView>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="iAk-UQ-vhD" firstAttribute="centerY" secondItem="1j7-9X-GKq" secondAttribute="centerY" id="7s5-s8-fe0"/>
+                                                            </constraints>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdX-KT-B2H">
-                                                            <rect key="frame" x="0.0" y="239" width="355" height="47"/>
+                                                            <rect key="frame" x="0.0" y="237.5" width="355" height="48.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                             <state key="normal" title="Share"/>
                                                             <connections>
