@@ -108,19 +108,33 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hG7-W6-JJl" userLabel="Image + Details + Send">
                                                     <rect key="frame" x="0.0" y="0.0" width="355" height="286"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="354" placeholderIntrinsicHeight="160" image="bali" translatesAutoresizingMaskIntoConstraints="NO" id="Tbu-JW-XAe">
-                                                            <rect key="frame" x="0.5" y="0.0" width="354" height="160"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="tbf-5N-KWM" userLabel="Image + Credit">
+                                                            <rect key="frame" x="0.5" y="0.0" width="354" height="152"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="354" placeholderIntrinsicHeight="160" image="bali" translatesAutoresizingMaskIntoConstraints="NO" id="Tbu-JW-XAe">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="160"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="160" id="0LM-vb-LEx"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo by Tom Winckels on Unsplash" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUg-Og-etb">
+                                                                    <rect key="frame" x="10" y="140" width="334" height="12"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="10"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="160" id="0LM-vb-LEx"/>
+                                                                <constraint firstItem="rUg-Og-etb" firstAttribute="leading" secondItem="tbf-5N-KWM" secondAttribute="leading" constant="10" id="egJ-3r-Yc7"/>
                                                             </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="5"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </imageView>
+                                                        </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZ9-ke-zBa" userLabel="Details">
-                                                            <rect key="frame" x="0.0" y="170" width="355" height="67"/>
+                                                            <rect key="frame" x="0.0" y="162" width="355" height="67"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="iW0-5p-7Ro" userLabel="Title + Location">
                                                                     <rect key="frame" x="0.0" y="0.0" width="285" height="67"/>
@@ -159,7 +173,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdX-KT-B2H">
-                                                            <rect key="frame" x="0.0" y="247" width="355" height="39"/>
+                                                            <rect key="frame" x="0.0" y="239" width="355" height="47"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                             <state key="normal" title="Share"/>
                                                             <connections>

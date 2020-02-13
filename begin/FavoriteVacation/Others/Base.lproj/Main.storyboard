@@ -109,19 +109,33 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GV0-1h-g4L" userLabel="Image + Details + Send">
                                                     <rect key="frame" x="0.0" y="0.0" width="355" height="286"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="354" placeholderIntrinsicHeight="160" image="bali" translatesAutoresizingMaskIntoConstraints="NO" id="W9C-cF-2Wj">
-                                                            <rect key="frame" x="0.5" y="0.0" width="354" height="160"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="4HH-Cq-8kT" userLabel="Image + Credit">
+                                                            <rect key="frame" x="0.5" y="0.0" width="354" height="152"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="354" placeholderIntrinsicHeight="160" image="bali" translatesAutoresizingMaskIntoConstraints="NO" id="W9C-cF-2Wj">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="160"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="160" id="YUs-lD-mPY"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo by Tom Winckels on Unsplash" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vW-HP-YAo">
+                                                                    <rect key="frame" x="10" y="140" width="334" height="12"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="10"/>
+                                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="160" id="YUs-lD-mPY"/>
+                                                                <constraint firstItem="2vW-HP-YAo" firstAttribute="leading" secondItem="4HH-Cq-8kT" secondAttribute="leading" constant="10" id="Xom-f5-08u"/>
                                                             </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="5"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </imageView>
+                                                        </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vg7-NF-Tu2" userLabel="Details">
-                                                            <rect key="frame" x="0.0" y="170" width="355" height="67"/>
+                                                            <rect key="frame" x="0.0" y="162" width="355" height="67"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="gi7-pc-cv8" userLabel="Title + Location">
                                                                     <rect key="frame" x="0.0" y="0.0" width="285" height="67"/>
@@ -164,7 +178,7 @@
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eq6-2C-5Ys">
-                                                            <rect key="frame" x="0.0" y="247" width="355" height="39"/>
+                                                            <rect key="frame" x="0.0" y="239" width="355" height="47"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                             <state key="normal" title="Share"/>
                                                             <connections>
