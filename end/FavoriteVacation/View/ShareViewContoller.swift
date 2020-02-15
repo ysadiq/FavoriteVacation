@@ -60,7 +60,8 @@ class ShareViewController: UIViewController {
     emailTextField.attributedPlaceholder = NSAttributedString(string: "Enter your partner's email",
                                                               attributes: [NSAttributedString.Key.foregroundColor: resolvedColor])
   }
-  
+
+  // MARK: UI Elements Configuration
   func configureButtons() {
     let resolvedColor = UIColor.label.resolvedColor(with: traitCollection)
     

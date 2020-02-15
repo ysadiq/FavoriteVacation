@@ -46,22 +46,25 @@ class DestinationViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     configureTableView()
-    initializeViewModel()
+    initViewModel()
   }
-  
-  func configureTableView() {
-    tableView.estimatedRowHeight = 250
-    tableView.rowHeight = UITableView.automaticDimension
+
+  // MARK: ViewModel Initialization
+  func initViewModel() {
+    initLoadingStatusClosure()
+    initReloadTableClosure()
+
+    viewModel.initFetch()
   }
-  
-  func initializeViewModel() {
+
+  func initLoadingStatusClosure() {
     viewModel.updateLoadingStatus = { [weak self] () in
       guard let self = self else {
         return
       }
-      
+
       DispatchQueue.main.async { [weak self] in
         guard let self = self else {
           return
@@ -70,40 +73,50 @@ class DestinationViewController: UIViewController {
         switch self.viewModel.state {
         case .empty, .error:
           self.stopLoading()
-
-          UIView.animate(withDuration: 0.2, animations: {
-            self.tableView.alpha = 0.0
-          })
+          self.hideTableView()
         case .loading:
           self.startLoading()
-
-          UIView.animate(withDuration: 0.2, animations: {
-            self.tableView.alpha = 0.0
-          })
+          self.hideTableView()
         case .populated:
           self.stopLoading()
-
-          UIView.animate(withDuration: 0.2, animations: {
-            self.tableView.alpha = 1.0
-          })
+          self.showTableView()
         }
       }
     }
-    
+  }
+
+  func initReloadTableClosure() {
     viewModel.reloadTableViewClosure = { [weak self] () in
       DispatchQueue.main.async {
         self?.tableView.reloadData()
       }
     }
-    
-    viewModel.initFetch()
   }
-  
+
+  // MARK: TableView configuration
+  func configureTableView() {
+    tableView.estimatedRowHeight = 250
+    tableView.rowHeight = UITableView.automaticDimension
+  }
+
+  func showTableView() {
+    UIView.animate(withDuration: 0.2, animations: {
+      self.tableView.alpha = 1.0
+    })
+  }
+
+  func hideTableView() {
+    UIView.animate(withDuration: 0.2, animations: {
+      self.tableView.alpha = 0.0
+    })
+  }
+
+  // MARK: Loading Alert Configuration
   func startLoading() {
     let alert = UIAlertController(title: nil,
                                   message: "Please wait...",
                                   preferredStyle: .alert)
-    
+
     let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
     loadingIndicator.hidesWhenStopped = true
     loadingIndicator.style = .medium
@@ -112,7 +125,7 @@ class DestinationViewController: UIViewController {
     alert.view.addSubview(loadingIndicator)
     present(alert, animated: true, completion: nil)
   }
-  
+
   func stopLoading() {
     dismiss(animated: false, completion: nil)
   }

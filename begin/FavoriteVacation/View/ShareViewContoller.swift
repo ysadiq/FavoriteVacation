@@ -50,7 +50,8 @@ class ShareViewController: UIViewController {
     configureEmailTextField()
     configureButtons()
   }
-  
+
+  // MARK: UI Elements Configuration
   func configureEmailTextField() {
     let color = UIColor.lightGray
     

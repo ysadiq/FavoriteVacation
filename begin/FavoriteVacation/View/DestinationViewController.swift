@@ -48,57 +48,70 @@ class DestinationViewController: UIViewController {
     super.viewDidLoad()
     
     configureTableView()
-    initializeViewModel()
+    initViewModel()
   }
-  
+
+  // MARK: ViewModel Initialization
+  func initViewModel() {
+    initLoadingStatusClosure()
+    initReloadTableClosure()
+
+    viewModel.initFetch()
+  }
+
+  func initLoadingStatusClosure() {
+    viewModel.updateLoadingStatus = { [weak self] () in
+       guard let self = self else {
+         return
+       }
+
+       DispatchQueue.main.async { [weak self] in
+         guard let self = self else {
+           return
+         }
+
+         switch self.viewModel.state {
+         case .empty, .error:
+           self.stopLoading()
+           self.hideTableView()
+         case .loading:
+           self.startLoading()
+           self.hideTableView()
+         case .populated:
+           self.stopLoading()
+           self.showTableView()
+         }
+       }
+     }
+  }
+
+  func initReloadTableClosure() {
+    viewModel.reloadTableViewClosure = { [weak self] () in
+       DispatchQueue.main.async {
+         self?.tableView.reloadData()
+       }
+     }
+  }
+
+  // MARK: TableView configuration
   func configureTableView() {
     tableView.estimatedRowHeight = 250
     tableView.rowHeight = UITableView.automaticDimension
   }
-  
-  func initializeViewModel() {
-    viewModel.updateLoadingStatus = { [weak self] () in
-      guard let self = self else {
-        return
-      }
-      
-      DispatchQueue.main.async { [weak self] in
-        guard let self = self else {
-          return
-        }
 
-        switch self.viewModel.state {
-        case .empty, .error:
-          self.stopLoading()
-
-          UIView.animate(withDuration: 0.2, animations: {
-            self.tableView.alpha = 0.0
-          })
-        case .loading:
-          self.startLoading()
-
-          UIView.animate(withDuration: 0.2, animations: {
-            self.tableView.alpha = 0.0
-          })
-        case .populated:
-          self.stopLoading()
-
-          UIView.animate(withDuration: 0.2, animations: {
-            self.tableView.alpha = 1.0
-          })
-        }
-      }
-    }
-    
-    viewModel.reloadTableViewClosure = { [weak self] () in
-      DispatchQueue.main.async {
-        self?.tableView.reloadData()
-      }
-    }
-    
-    viewModel.initFetch()
+  func showTableView() {
+    UIView.animate(withDuration: 0.2, animations: {
+      self.tableView.alpha = 1.0
+    })
   }
-  
+
+  func hideTableView() {
+    UIView.animate(withDuration: 0.2, animations: {
+      self.tableView.alpha = 0.0
+    })
+  }
+
+  // MARK: Loading Alert Configuration
   func startLoading() {
     let alert = UIAlertController(title: nil,
                                   message: "Please wait...",
