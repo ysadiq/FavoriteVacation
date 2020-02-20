@@ -247,7 +247,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qC1-ah-Cas"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="All Spots" selectedImage="airplane" catalog="system" id="Z1Q-Xm-0ud"/>
                     <connections>
                         <outlet property="segmentedControl" destination="k9V-gD-nRP" id="5K3-mm-97y"/>
                         <outlet property="tableView" destination="LFr-0V-2JN" id="czo-9F-HdH"/>
@@ -259,7 +258,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="airplane" catalog="system" width="64" height="56"/>
         <image name="krabi" width="954" height="1272"/>
     </resources>
 </document>
