@@ -33,7 +33,7 @@
 import UIKit
 
 extension UIColor {
-  public static var lightAndDarkLocationColor: UIColor = {
+  public static var location: UIColor = {
     return UIColor { (trait) -> UIColor in
       if trait.userInterfaceStyle == .dark {
         return .red

@@ -45,7 +45,7 @@ class DestinationTableViewCell: UITableViewCell {
     didSet {
       titleLabel.text = destinationCellViewModel?.titleText
       locationLabel.text = destinationCellViewModel?.locationText
-      locationLabel.textColor = .lightAndDarkLocationColor
+      locationLabel.textColor = .location
       
       if let imageName = destinationCellViewModel?.imageName {
         mainImageView?.image = UIImage(named: imageName)

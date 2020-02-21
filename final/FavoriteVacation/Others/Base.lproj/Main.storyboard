@@ -158,7 +158,7 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2,500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAk-UQ-vhD">
                                                                             <rect key="frame" x="0.0" y="0.0" width="70" height="33.5"/>
                                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                                                            <color key="textColor" name="LightAndDarkPriceColor"/>
+                                                                            <color key="textColor" name="price"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ddu-6N-OHt">
@@ -249,7 +249,7 @@
     </scenes>
     <resources>
         <image name="krabi" width="954" height="1272"/>
-        <namedColor name="LightAndDarkPriceColor">
+        <namedColor name="price">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
     </resources>
