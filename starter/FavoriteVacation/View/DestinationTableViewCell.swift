@@ -55,10 +55,8 @@ class DestinationTableViewCell: UITableViewCell {
       }
       
       if let isFavorite = destinationCellViewModel?.isFavorite {
-        // 1
-        isFavoriteImageView.image = UIImage(systemName: isFavorite ? "heart.fill" : "heart")
-        // 2
-        isFavoriteImageView.tintColor = .label
+        // TODO: Replace the below line with SF Symbols
+        isFavoriteImageView.image = UIImage(named: isFavorite ? "filledHeart" : "heart")
       }
       
       if let credit = destinationCellViewModel?.credit {
@@ -76,8 +74,7 @@ class DestinationTableViewCell: UITableViewCell {
   
   override func layoutSubviews() {
     super.layoutSubviews()
-
-    let resolvedColor = UIColor.label.resolvedColor(with: traitCollection)
-    sendButton.layer.borderColor = resolvedColor.cgColor
+    
+    sendButton.layer.borderColor = UIColor.black.cgColor
   }
 }
