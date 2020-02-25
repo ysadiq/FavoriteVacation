@@ -45,6 +45,7 @@ class DestinationTableViewCell: UITableViewCell {
     didSet {
       titleLabel.text = destinationCellViewModel?.titleText
       locationLabel.text = destinationCellViewModel?.locationText
+      // TODO: Add more code here...
       
       if let imageName = destinationCellViewModel?.imageName {
         mainImageView?.image = UIImage(named: imageName)
