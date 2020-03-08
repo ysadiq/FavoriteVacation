@@ -20,7 +20,7 @@
         }
       ],
       "color" : {
-        "platform" : "osx",
+        "platform" : "ios",
         "reference" : "systemRedColor"
       }
     },
@@ -50,7 +50,7 @@
         }
       ],
       "color" : {
-        "platform" : "osx",
+        "platform" : "ios",
         "reference" : "systemRedColor"
       }
     }
